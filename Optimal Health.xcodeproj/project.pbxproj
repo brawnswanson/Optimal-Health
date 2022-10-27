@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C451EC60290AD2450030F1E0 /* DailyPortionLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C451EC5F290AD2450030F1E0 /* DailyPortionLogView.swift */; };
+		C4677250290AC05100C9FFC1 /* TapLongPressureGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C467724F290AC05100C9FFC1 /* TapLongPressureGesture.swift */; };
 		C49283A828C6538E005770A8 /* Optimal_HealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49283A728C6538E005770A8 /* Optimal_HealthApp.swift */; };
 		C49283AA28C6538E005770A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49283A928C6538E005770A8 /* ContentView.swift */; };
 		C49283AC28C6538F005770A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49283AB28C6538F005770A8 /* Assets.xcassets */; };
 		C49283AF28C6538F005770A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49283AE28C6538F005770A8 /* Preview Assets.xcassets */; };
+		C49EA616290A934000A1AF4C /* TappablePortionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49EA615290A934000A1AF4C /* TappablePortionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C451EC5F290AD2450030F1E0 /* DailyPortionLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPortionLogView.swift; sourceTree = "<group>"; };
+		C467724F290AC05100C9FFC1 /* TapLongPressureGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapLongPressureGesture.swift; sourceTree = "<group>"; };
 		C49283A428C6538E005770A8 /* Optimal Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Optimal Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49283A728C6538E005770A8 /* Optimal_HealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optimal_HealthApp.swift; sourceTree = "<group>"; };
 		C49283A928C6538E005770A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C49283AB28C6538F005770A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C49283AE28C6538F005770A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C49EA615290A934000A1AF4C /* TappablePortionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappablePortionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +38,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C451EC5A290AD1FA0030F1E0 /* Tappable Portion View */ = {
+			isa = PBXGroup;
+			children = (
+				C49EA615290A934000A1AF4C /* TappablePortionView.swift */,
+				C467724E290AC03E00C9FFC1 /* Components */,
+			);
+			path = "Tappable Portion View";
+			sourceTree = "<group>";
+		};
+		C451EC5B290AD2140030F1E0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C451EC5A290AD1FA0030F1E0 /* Tappable Portion View */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C467724E290AC03E00C9FFC1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C467724F290AC05100C9FFC1 /* TapLongPressureGesture.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C4677251290AC06B00C9FFC1 /* Daily Portion Log Screen */ = {
+			isa = PBXGroup;
+			children = (
+				C451EC5F290AD2450030F1E0 /* DailyPortionLogView.swift */,
+				C451EC5B290AD2140030F1E0 /* Components */,
+			);
+			path = "Daily Portion Log Screen";
+			sourceTree = "<group>";
+		};
 		C492839B28C6538E005770A8 = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				C49283A728C6538E005770A8 /* Optimal_HealthApp.swift */,
+				C49EA614290A932A00A1AF4C /* Screens */,
 				C49283A928C6538E005770A8 /* ContentView.swift */,
 				C49283AB28C6538F005770A8 /* Assets.xcassets */,
 				C49283AD28C6538F005770A8 /* Preview Content */,
@@ -65,6 +106,14 @@
 				C49283AE28C6538F005770A8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C49EA614290A932A00A1AF4C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				C4677251290AC06B00C9FFC1 /* Daily Portion Log Screen */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +186,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4677250290AC05100C9FFC1 /* TapLongPressureGesture.swift in Sources */,
 				C49283AA28C6538E005770A8 /* ContentView.swift in Sources */,
+				C451EC60290AD2450030F1E0 /* DailyPortionLogView.swift in Sources */,
 				C49283A828C6538E005770A8 /* Optimal_HealthApp.swift in Sources */,
+				C49EA616290A934000A1AF4C /* TappablePortionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

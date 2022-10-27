@@ -27,20 +27,20 @@ struct DailyPortionLogView: View {
         }
         .padding()
         HStack {
-          TappablePortionView(color: .cyan)
-          TappablePortionView(color: .cyan)
-          TappablePortionView(color: .cyan)
-          TappablePortionView(color: .cyan)
-          TappablePortionView(color: .cyan)
-          TappablePortionView(color: .cyan)
+          TappablePortionView(color: .cyan, extraPortion: false)
+          TappablePortionView(color: .cyan, extraPortion: false)
+          TappablePortionView(color: .cyan, extraPortion: false)
+          TappablePortionView(color: .cyan, extraPortion: false)
+          TappablePortionView(color: .cyan, extraPortion: false)
+          TappablePortionView(color: .cyan, extraPortion: false)
         }
         HStack {
-          TappablePortionView(color: .cyan)
-          TappablePortionView(color: .cyan)
-          TappablePortionView(color: .cyan)
-          TappablePortionView(color: .cyan)
-          TappablePortionView(color: .cyan)
-          TappablePortionView(color: .cyan)
+          TappablePortionView(color: .cyan, extraPortion: false)
+          TappablePortionView(color: .cyan, extraPortion: false)
+          TappablePortionView(color: .cyan, extraPortion: false)
+          TappablePortionView(color: .cyan, extraPortion: false)
+          TappablePortionView(color: .cyan, extraPortion: false)
+          TappablePortionView(color: .cyan, extraPortion: true)
         }
       }
       Divider()
@@ -54,20 +54,20 @@ struct DailyPortionLogView: View {
         }
         .padding()
         HStack {
-          TappablePortionView(color: .green)
-          TappablePortionView(color: .green)
-          TappablePortionView(color: .green)
-          TappablePortionView(color: .green)
-          TappablePortionView(color: .green)
-          TappablePortionView(color: .green)
+          TappablePortionView(color: .green, extraPortion: false)
+          TappablePortionView(color: .green, extraPortion: false)
+          TappablePortionView(color: .green, extraPortion: false)
+          TappablePortionView(color: .green, extraPortion: false)
+          TappablePortionView(color: .green, extraPortion: false)
+          TappablePortionView(color: .green, extraPortion: false)
         }
         HStack {
-          TappablePortionView(color: .green)
-          TappablePortionView(color: .green)
-          TappablePortionView(color: .green)
-          TappablePortionView(color: .green)
-          TappablePortionView(color: .green)
-          TappablePortionView(color: .green)
+          TappablePortionView(color: .green, extraPortion: false)
+          TappablePortionView(color: .green, extraPortion: false)
+          TappablePortionView(color: .green, extraPortion: false)
+          TappablePortionView(color: .green, extraPortion: false)
+          TappablePortionView(color: .green, extraPortion: false)
+          TappablePortionView(color: .green, extraPortion: true)
         }
       }
       Divider()
@@ -81,20 +81,20 @@ struct DailyPortionLogView: View {
         }
         .padding()
         HStack {
-          TappablePortionView(color: .orange)
-          TappablePortionView(color: .orange)
-          TappablePortionView(color: .orange)
-          TappablePortionView(color: .orange)
-          TappablePortionView(color: .orange)
-          TappablePortionView(color: .orange)
+          TappablePortionView(color: .orange, extraPortion: false)
+          TappablePortionView(color: .orange, extraPortion: false)
+          TappablePortionView(color: .orange, extraPortion: false)
+          TappablePortionView(color: .orange, extraPortion: false)
+          TappablePortionView(color: .orange, extraPortion: false)
+          TappablePortionView(color: .orange, extraPortion: false)
         }
         HStack {
-          TappablePortionView(color: .orange)
-          TappablePortionView(color: .orange)
-          TappablePortionView(color: .orange)
-          TappablePortionView(color: .orange)
-          TappablePortionView(color: .orange)
-          TappablePortionView(color: .orange)
+          TappablePortionView(color: .orange, extraPortion: false)
+          TappablePortionView(color: .orange, extraPortion: false)
+          TappablePortionView(color: .orange, extraPortion: false)
+          TappablePortionView(color: .orange, extraPortion: false)
+          TappablePortionView(color: .orange, extraPortion: false)
+          TappablePortionView(color: .orange, extraPortion: true)
         }
       }
       Divider()
@@ -108,20 +108,20 @@ struct DailyPortionLogView: View {
         }
         .padding()
         HStack {
-          TappablePortionView(color: .yellow)
-          TappablePortionView(color: .yellow)
-          TappablePortionView(color: .yellow)
-          TappablePortionView(color: .yellow)
-          TappablePortionView(color: .yellow)
-          TappablePortionView(color: .yellow)
+          TappablePortionView(color: .yellow, extraPortion: false)
+          TappablePortionView(color: .yellow, extraPortion: false)
+          TappablePortionView(color: .yellow, extraPortion: false)
+          TappablePortionView(color: .yellow, extraPortion: false)
+          TappablePortionView(color: .yellow, extraPortion: false)
+          TappablePortionView(color: .yellow, extraPortion: false)
         }
         HStack {
-          TappablePortionView(color: .yellow)
-          TappablePortionView(color: .yellow)
-          TappablePortionView(color: .yellow)
-          TappablePortionView(color: .yellow)
-          TappablePortionView(color: .yellow)
-          TappablePortionView(color: .yellow)
+          TappablePortionView(color: .yellow, extraPortion: false)
+          TappablePortionView(color: .yellow, extraPortion: false)
+          TappablePortionView(color: .yellow, extraPortion: false)
+          TappablePortionView(color: .yellow, extraPortion: false)
+          TappablePortionView(color: .yellow, extraPortion: false)
+          TappablePortionView(color: .yellow, extraPortion: true)
         }
       }
     }

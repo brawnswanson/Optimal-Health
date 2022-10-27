@@ -23,6 +23,7 @@ struct TappablePortionView: View {
           .opacity(filled ? 1.0 : 0.0)
         circleBorder()
       }
+      .scaledToFit()
     }
     .tapAndLongPressGesture(valueToToggle: $filled)
   }

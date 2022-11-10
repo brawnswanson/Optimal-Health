@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct Optimal_HealthApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  
+  let context = CoreDataController.shared.context
+  
+  var body: some Scene {
+    WindowGroup {
+      ContentView().environment(\.managedObjectContext, context)
     }
+  }
 }

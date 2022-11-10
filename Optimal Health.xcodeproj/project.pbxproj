@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C429ECD8291D0580005DBCE4 /* NutrientSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C429ECD7291D0580005DBCE4 /* NutrientSectionView.swift */; };
+		C429ECDA291D090A005DBCE4 /* PortionLogHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C429ECD9291D090A005DBCE4 /* PortionLogHeader.swift */; };
+		C429ECDD291D0994005DBCE4 /* SFSymbolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C429ECDC291D0994005DBCE4 /* SFSymbolButton.swift */; };
+		C429ECE0291D1157005DBCE4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C429ECDF291D1157005DBCE4 /* Constants.swift */; };
+		C429ECE7291D2460005DBCE4 /* DailyLogModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C429ECE5291D2460005DBCE4 /* DailyLogModel.xcdatamodeld */; };
+		C429ECE9291D2649005DBCE4 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C429ECE8291D2649005DBCE4 /* CoreDataController.swift */; };
 		C451EC60290AD2450030F1E0 /* DailyPortionLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C451EC5F290AD2450030F1E0 /* DailyPortionLogView.swift */; };
 		C4677250290AC05100C9FFC1 /* TapLongPressureGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C467724F290AC05100C9FFC1 /* TapLongPressureGesture.swift */; };
 		C49283A828C6538E005770A8 /* Optimal_HealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49283A728C6538E005770A8 /* Optimal_HealthApp.swift */; };
@@ -17,6 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C429ECD7291D0580005DBCE4 /* NutrientSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientSectionView.swift; sourceTree = "<group>"; };
+		C429ECD9291D090A005DBCE4 /* PortionLogHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortionLogHeader.swift; sourceTree = "<group>"; };
+		C429ECDC291D0994005DBCE4 /* SFSymbolButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolButton.swift; sourceTree = "<group>"; };
+		C429ECDF291D1157005DBCE4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C429ECE6291D2460005DBCE4 /* DailyLogModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DailyLogModel.xcdatamodel; sourceTree = "<group>"; };
+		C429ECE8291D2649005DBCE4 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		C451EC5F290AD2450030F1E0 /* DailyPortionLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPortionLogView.swift; sourceTree = "<group>"; };
 		C467724F290AC05100C9FFC1 /* TapLongPressureGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapLongPressureGesture.swift; sourceTree = "<group>"; };
 		C49283A428C6538E005770A8 /* Optimal Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Optimal Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +50,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C429ECDB291D094A005DBCE4 /* CommonComponents */ = {
+			isa = PBXGroup;
+			children = (
+				C429ECDC291D0994005DBCE4 /* SFSymbolButton.swift */,
+			);
+			path = CommonComponents;
+			sourceTree = "<group>";
+		};
+		C429ECDE291D113B005DBCE4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C429ECDF291D1157005DBCE4 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C429ECE1291D240A005DBCE4 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				C429ECE5291D2460005DBCE4 /* DailyLogModel.xcdatamodeld */,
+				C429ECE8291D2649005DBCE4 /* CoreDataController.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		C451EC5A290AD1FA0030F1E0 /* Tappable Portion View */ = {
 			isa = PBXGroup;
 			children = (
@@ -50,6 +87,8 @@
 		C451EC5B290AD2140030F1E0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C429ECD9291D090A005DBCE4 /* PortionLogHeader.swift */,
+				C429ECD7291D0580005DBCE4 /* NutrientSectionView.swift */,
 				C451EC5A290AD1FA0030F1E0 /* Tappable Portion View */,
 			);
 			path = Components;
@@ -92,8 +131,10 @@
 			isa = PBXGroup;
 			children = (
 				C49283A728C6538E005770A8 /* Optimal_HealthApp.swift */,
+				C429ECE1291D240A005DBCE4 /* Database */,
 				C49EA614290A932A00A1AF4C /* Screens */,
-				C49283A928C6538E005770A8 /* ContentView.swift */,
+				C429ECDB291D094A005DBCE4 /* CommonComponents */,
+				C429ECDE291D113B005DBCE4 /* Helpers */,
 				C49283AB28C6538F005770A8 /* Assets.xcassets */,
 				C49283AD28C6538F005770A8 /* Preview Content */,
 			);
@@ -111,6 +152,7 @@
 		C49EA614290A932A00A1AF4C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				C49283A928C6538E005770A8 /* ContentView.swift */,
 				C4677251290AC06B00C9FFC1 /* Daily Portion Log Screen */,
 			);
 			path = Screens;
@@ -186,11 +228,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C429ECDA291D090A005DBCE4 /* PortionLogHeader.swift in Sources */,
 				C4677250290AC05100C9FFC1 /* TapLongPressureGesture.swift in Sources */,
+				C429ECDD291D0994005DBCE4 /* SFSymbolButton.swift in Sources */,
+				C429ECD8291D0580005DBCE4 /* NutrientSectionView.swift in Sources */,
 				C49283AA28C6538E005770A8 /* ContentView.swift in Sources */,
 				C451EC60290AD2450030F1E0 /* DailyPortionLogView.swift in Sources */,
+				C429ECE9291D2649005DBCE4 /* CoreDataController.swift in Sources */,
+				C429ECE7291D2460005DBCE4 /* DailyLogModel.xcdatamodeld in Sources */,
 				C49283A828C6538E005770A8 /* Optimal_HealthApp.swift in Sources */,
 				C49EA616290A934000A1AF4C /* TappablePortionView.swift in Sources */,
+				C429ECE0291D1157005DBCE4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +439,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C429ECE5291D2460005DBCE4 /* DailyLogModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C429ECE6291D2460005DBCE4 /* DailyLogModel.xcdatamodel */,
+			);
+			currentVersion = C429ECE6291D2460005DBCE4 /* DailyLogModel.xcdatamodel */;
+			path = DailyLogModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C492839C28C6538E005770A8 /* Project object */;
 }

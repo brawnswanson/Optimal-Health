@@ -9,21 +9,22 @@ import SwiftUI
 
 struct DailyPortionLogView: View {
   
+  @FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: SortOrder.reverse)]) var logs: FetchedResults<DailyLog>
   
   var body: some View {
     VStack {
       PortionLogHeader()
       Divider()
-      NutrientSectionView(heading: "Proteins", color: .cyan, minimumWidth: 30.0)
+      NutrientSectionView(nutrient: .proteins, minimumWidth: 30.0)
       Divider()
         .padding(.vertical)
-      NutrientSectionView(heading: "Vegetables", color: .green, minimumWidth: 30.0)
+      NutrientSectionView(nutrient: .vegetables, minimumWidth: 30.0)
       Divider()
         .padding(.vertical)
-      NutrientSectionView(heading: "Carbs", color: .orange, minimumWidth: 30.0)
+      NutrientSectionView(nutrient: .carbs, minimumWidth: 30.0)
       Divider()
         .padding(.vertical)
-      NutrientSectionView(heading: "Fats", color: .yellow, minimumWidth: 30.0)
+      NutrientSectionView(nutrient: .fats, minimumWidth: 30.0)
     }
   }
 }

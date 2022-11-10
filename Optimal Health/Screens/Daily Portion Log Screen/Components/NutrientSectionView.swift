@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NutrientSectionView: View {
   
-  let nutrient: Constants.Nutrient
+  let nutrient: Nutrient
   let minimumWidth: Double
   
   var body: some View {

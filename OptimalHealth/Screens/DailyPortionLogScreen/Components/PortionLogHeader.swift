@@ -14,7 +14,7 @@ struct PortionLogHeader: View {
   var body: some View {
       HStack {
         SFSymbolButton(image: Constants.Images.chevronLeft, action: {})
-        Text("\(date.month?.magnitude ?? 1).\(date.day?.magnitude ?? 1).\(date.year?.magnitude ?? 1)")
+        Text("\(date.month?.description ?? "1").\(date.day?.description ?? "1").\(date.year?.description ?? "1")")
         SFSymbolButton(image: Constants.Images.chevronRight, action: {})
       }
     }

@@ -12,7 +12,7 @@ class DailyPortionLogViewModel: ObservableObject {
   
   @Published var currentLog: DailyLog?
   @Published var dailyLogs: [DailyLog] = []
-  @Published var currentLogDate: DateComponents
+  @Published var currentLogDate: Date
   
   private let contextChangePublisher = NotificationCenter.default.publisher(for: Notification.Name.NSManagedObjectContextObjectsDidChange)
   
@@ -24,10 +24,10 @@ class DailyPortionLogViewModel: ObservableObject {
   
   init() {
     
-    if let lastViewedDate = UserDefaults.standard.value(forKey: "currentViewDate") as? Data, let components = try? decoder.decode(DateComponents.self, from: lastViewedDate) {
-      currentLogDate = components
-    } else {
-      currentLogDate = calendar.dateComponents([.day, .month, .year], from: Date())
+    if let lastViewedDate = UserDefaults.standard.value(forKey: "currentViewDate") as? Date {
+      currentLogDate = lastViewedDate
+    } else {git 
+      currentLogDate = Date()
     }
     
     //Subscribe to publishers
@@ -41,7 +41,6 @@ class DailyPortionLogViewModel: ObservableObject {
 extension DailyPortionLogViewModel {
   func updateCurrentViewDateInUserDefaults() {
     $currentLogDate
-      .map { try? self.encoder.encode($0) }
       .sink(receiveValue: { UserDefaults.standard.set($0, forKey: "currentViewDate")})
       .store(in: &subscriptions)
   }
@@ -55,9 +54,8 @@ extension DailyPortionLogViewModel {
 //MARK: - CoreData Interactions
 extension DailyPortionLogViewModel {
   func createNewLog() {
-    guard let dateData = try? encoder.encode(currentLogDate) else { return }
     let newLog = DailyLog(context: CoreDataController.shared.context)
-    newLog.date = dateData
+    newLog.date = currentLogDate
     newLog.id = UUID()
   }
   

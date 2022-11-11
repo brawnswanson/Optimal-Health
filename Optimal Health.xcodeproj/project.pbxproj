@@ -15,6 +15,9 @@
 		C429ECE9291D2649005DBCE4 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C429ECE8291D2649005DBCE4 /* CoreDataController.swift */; };
 		C451EC60290AD2450030F1E0 /* DailyPortionLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C451EC5F290AD2450030F1E0 /* DailyPortionLogView.swift */; };
 		C4677250290AC05100C9FFC1 /* TapLongPressureGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C467724F290AC05100C9FFC1 /* TapLongPressureGesture.swift */; };
+		C47913ED291D61C700047E61 /* DailyPortionLogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47913EC291D61C700047E61 /* DailyPortionLogViewModel.swift */; };
+		C47913EF291D646400047E61 /* NutrientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47913EE291D646400047E61 /* NutrientsView.swift */; };
+		C47913F3291D659800047E61 /* AvailableNutrients.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47913F2291D659800047E61 /* AvailableNutrients.swift */; };
 		C49283A828C6538E005770A8 /* Optimal_HealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49283A728C6538E005770A8 /* Optimal_HealthApp.swift */; };
 		C49283AA28C6538E005770A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49283A928C6538E005770A8 /* ContentView.swift */; };
 		C49283AC28C6538F005770A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49283AB28C6538F005770A8 /* Assets.xcassets */; };
@@ -31,6 +34,9 @@
 		C429ECE8291D2649005DBCE4 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		C451EC5F290AD2450030F1E0 /* DailyPortionLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPortionLogView.swift; sourceTree = "<group>"; };
 		C467724F290AC05100C9FFC1 /* TapLongPressureGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapLongPressureGesture.swift; sourceTree = "<group>"; };
+		C47913EC291D61C700047E61 /* DailyPortionLogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPortionLogViewModel.swift; sourceTree = "<group>"; };
+		C47913EE291D646400047E61 /* NutrientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsView.swift; sourceTree = "<group>"; };
+		C47913F2291D659800047E61 /* AvailableNutrients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableNutrients.swift; sourceTree = "<group>"; };
 		C49283A428C6538E005770A8 /* Optimal Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Optimal Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49283A728C6538E005770A8 /* Optimal_HealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optimal_HealthApp.swift; sourceTree = "<group>"; };
 		C49283A928C6538E005770A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				C429ECD9291D090A005DBCE4 /* PortionLogHeader.swift */,
+				C47913EE291D646400047E61 /* NutrientsView.swift */,
 				C429ECD7291D0580005DBCE4 /* NutrientSectionView.swift */,
 				C451EC5A290AD1FA0030F1E0 /* Tappable Portion View */,
 			);
@@ -102,19 +109,44 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		C4677251290AC06B00C9FFC1 /* Daily Portion Log Screen */ = {
+		C4677251290AC06B00C9FFC1 /* DailyPortionLogScreen */ = {
 			isa = PBXGroup;
 			children = (
 				C451EC5F290AD2450030F1E0 /* DailyPortionLogView.swift */,
 				C451EC5B290AD2140030F1E0 /* Components */,
 			);
-			path = "Daily Portion Log Screen";
+			path = DailyPortionLogScreen;
+			sourceTree = "<group>";
+		};
+		C47913EB291D61AD00047E61 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C47913EC291D61C700047E61 /* DailyPortionLogViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C47913F0291D656700047E61 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C47913F1291D657600047E61 /* UIModels */,
+				C429ECE1291D240A005DBCE4 /* Database */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C47913F1291D657600047E61 /* UIModels */ = {
+			isa = PBXGroup;
+			children = (
+				C47913F2291D659800047E61 /* AvailableNutrients.swift */,
+			);
+			path = UIModels;
 			sourceTree = "<group>";
 		};
 		C492839B28C6538E005770A8 = {
 			isa = PBXGroup;
 			children = (
-				C49283A628C6538E005770A8 /* Optimal Health */,
+				C49283A628C6538E005770A8 /* OptimalHealth */,
 				C49283A528C6538E005770A8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -127,18 +159,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C49283A628C6538E005770A8 /* Optimal Health */ = {
+		C49283A628C6538E005770A8 /* OptimalHealth */ = {
 			isa = PBXGroup;
 			children = (
 				C49283A728C6538E005770A8 /* Optimal_HealthApp.swift */,
-				C429ECE1291D240A005DBCE4 /* Database */,
+				C47913F0291D656700047E61 /* Models */,
+				C47913EB291D61AD00047E61 /* ViewModels */,
 				C49EA614290A932A00A1AF4C /* Screens */,
 				C429ECDB291D094A005DBCE4 /* CommonComponents */,
 				C429ECDE291D113B005DBCE4 /* Helpers */,
 				C49283AB28C6538F005770A8 /* Assets.xcassets */,
 				C49283AD28C6538F005770A8 /* Preview Content */,
 			);
-			path = "Optimal Health";
+			path = OptimalHealth;
 			sourceTree = "<group>";
 		};
 		C49283AD28C6538F005770A8 /* Preview Content */ = {
@@ -153,7 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				C49283A928C6538E005770A8 /* ContentView.swift */,
-				C4677251290AC06B00C9FFC1 /* Daily Portion Log Screen */,
+				C4677251290AC06B00C9FFC1 /* DailyPortionLogScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -228,14 +261,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C47913EF291D646400047E61 /* NutrientsView.swift in Sources */,
 				C429ECDA291D090A005DBCE4 /* PortionLogHeader.swift in Sources */,
 				C4677250290AC05100C9FFC1 /* TapLongPressureGesture.swift in Sources */,
 				C429ECDD291D0994005DBCE4 /* SFSymbolButton.swift in Sources */,
 				C429ECD8291D0580005DBCE4 /* NutrientSectionView.swift in Sources */,
 				C49283AA28C6538E005770A8 /* ContentView.swift in Sources */,
+				C47913ED291D61C700047E61 /* DailyPortionLogViewModel.swift in Sources */,
 				C451EC60290AD2450030F1E0 /* DailyPortionLogView.swift in Sources */,
 				C429ECE9291D2649005DBCE4 /* CoreDataController.swift in Sources */,
 				C429ECE7291D2460005DBCE4 /* DailyLogModel.xcdatamodeld in Sources */,
+				C47913F3291D659800047E61 /* AvailableNutrients.swift in Sources */,
 				C49283A828C6538E005770A8 /* Optimal_HealthApp.swift in Sources */,
 				C49EA616290A934000A1AF4C /* TappablePortionView.swift in Sources */,
 				C429ECE0291D1157005DBCE4 /* Constants.swift in Sources */,
@@ -366,7 +402,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Optimal Health/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"OptimalHealth/Preview Content\"";
 				DEVELOPMENT_TEAM = 5WASNT9DG3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -395,7 +431,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Optimal Health/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"OptimalHealth/Preview Content\"";
 				DEVELOPMENT_TEAM = 5WASNT9DG3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

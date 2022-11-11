@@ -9,12 +9,15 @@ import SwiftUI
 
 struct PortionLogHeader: View {
     
-  let date: DateComponents
+  let date: Date
+  private var dateComponents: DateComponents {
+    Calendar.current.dateComponents([.year, .month, .day], from: date)
+  }
   
   var body: some View {
       HStack {
         SFSymbolButton(image: Constants.Images.chevronLeft, action: {})
-        Text("\(date.month?.description ?? "1").\(date.day?.description ?? "1").\(date.year?.description ?? "1")")
+        Text("\(dateComponents.month?.description ?? "1").\(dateComponents.day?.description ?? "1").\(dateComponents.year?.description ?? "1")")
         SFSymbolButton(image: Constants.Images.chevronRight, action: {})
       }
     }

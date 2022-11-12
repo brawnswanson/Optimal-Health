@@ -12,7 +12,7 @@ class DailyPortionLogViewModel: ObservableObject {
   
   @Published var currentLog: DailyLog?
   @Published var dailyLogs: [DailyLog] = []
-  @Published var currentLogDate: Date
+  @Published var currentLogDate: DateComponents
   
   private let contextChangePublisher = NotificationCenter.default.publisher(for: Notification.Name.NSManagedObjectContextObjectsDidChange)
   
@@ -24,16 +24,15 @@ class DailyPortionLogViewModel: ObservableObject {
   
   init() {
     
-    if let lastViewedDate = UserDefaults.standard.value(forKey: "currentViewDate") as? Date {
-      currentLogDate = lastViewedDate
-    } else {git 
-      currentLogDate = Date()
+    if let lastViewedDateInUserDefaults = UserDefaults.standard.value(forKey: "currentViewDate") as? Data, let lastViewedDateComponents = try? decoder.decode(DateComponents.self, from: lastViewedDateInUserDefaults) {
+      currentLogDate = lastViewedDateComponents
+    } else {
+      currentLogDate = calendar.dateComponents([.year, .month, .day], from: Date())
     }
     
     //Subscribe to publishers
     updateCurrentViewDateInUserDefaults()
-    //If the currentlogdate changes, need to fetch the log for that date. if no log exists, display the add button
-    
+    fetchCurrentLogSubscription()
   }
 }
 
@@ -41,13 +40,20 @@ class DailyPortionLogViewModel: ObservableObject {
 extension DailyPortionLogViewModel {
   func updateCurrentViewDateInUserDefaults() {
     $currentLogDate
+      .print("userDefaultsUpdate:")
+      .map { date -> Data? in
+        try? self.encoder.encode(date)
+      }
       .sink(receiveValue: { UserDefaults.standard.set($0, forKey: "currentViewDate")})
       .store(in: &subscriptions)
   }
   
   func fetchCurrentLogSubscription() {
-    $currentLogDate
-    
+    contextChangePublisher.combineLatest($currentLogDate)
+      .print("Fetch currentLog:")
+      .map { try? CoreDataController.shared.context.fetch(DailyLog.dailyLogFetchRequest(for: $1)) }
+      .map { $0?.first }
+      .assign(to: &$currentLog)
   }
 }
 
@@ -59,10 +65,9 @@ extension DailyPortionLogViewModel {
     newLog.id = UUID()
   }
   
-  func fetchLogs() -> DailyLog? {
+  func fetchLogs() throws -> [DailyLog] {
     let fetchRequest = DailyLog.fetchRequest()
-    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
-    guard let results = try? CoreDataController.shared.context.fetch(fetchRequest) else { return nil }
-    return results.first
+    let results = try CoreDataController.shared.context.fetch(fetchRequest)
+    return results
   }
 }

@@ -6,15 +6,21 @@
 //
 
 import SwiftUI
+import CoreData
 
 @main
 struct Optimal_HealthApp: App {
   
-  let context = CoreDataController.shared.context
+  let context:NSManagedObjectContext
   
   var body: some Scene {
     WindowGroup {
       ContentView().environment(\.managedObjectContext, context)
     }
+  }
+  
+  init() {
+    ValueTransformer.setValueTransformer(DateComponentsTransformer(), forName: .dateComponentsTransformerName)
+    self.context = CoreDataController.shared.context
   }
 }

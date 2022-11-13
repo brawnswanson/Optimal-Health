@@ -40,19 +40,14 @@ class DailyPortionLogViewModel: ObservableObject {
 extension DailyPortionLogViewModel {
   func updateCurrentViewDateInUserDefaults() {
     $currentLogDate
-      .print("userDefaultsUpdate:")
-      .map { date -> Data? in
-        try? self.encoder.encode(date)
-      }
-      .sink(receiveValue: { UserDefaults.standard.set($0, forKey: "currentViewDate")})
-      .store(in: &subscriptions)
+      .map { try? self.fetchLog(for: $0) }
+      .assign(to: &$currentLog)
   }
   
   func fetchCurrentLogSubscription() {
-    contextChangePublisher.combineLatest($currentLogDate)
-      .print("Fetch currentLog:")
-      .map { try? CoreDataController.shared.context.fetch(DailyLog.dailyLogFetchRequest(for: $1)) }
-      .map { $0?.first }
+    contextChangePublisher
+      .map { _ in self.currentLogDate }
+      .map { try? self.fetchLog(for: $0) }
       .assign(to: &$currentLog)
   }
 }
@@ -65,9 +60,13 @@ extension DailyPortionLogViewModel {
     newLog.id = UUID()
   }
   
-  func fetchLogs() throws -> [DailyLog] {
-    let fetchRequest = DailyLog.fetchRequest()
+  func fetchLog(for date: DateComponents) throws -> DailyLog? {
+    let fetchRequest = DailyLog.dailyLogFetchRequest(for: date)
     let results = try CoreDataController.shared.context.fetch(fetchRequest)
-    return results
+    return results.first
+  }
+  
+  func findNextLog() {
+    
   }
 }

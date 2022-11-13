@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="DailyLog" representedClassName="DailyLog" syncable="YES" codeGenerationType="class">
-        <attribute name="date" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="DateComponents"/>
+    <entity name="DailyLog" representedClassName="DailyLog" syncable="YES">
+        <attribute name="date" attributeType="Transformable" valueTransformerName="DateComponentsTransformer" customClassName="DateComponents"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="nutrientEntries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NutrientEntry" inverseName="dailyLog" inverseEntity="NutrientEntry"/>
     </entity>

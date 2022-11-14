@@ -13,7 +13,7 @@ struct DailyPortionLogView: View {
   
   var body: some View {
     VStack {
-      PortionLogHeader(date: vm.currentLogDate)
+      PortionLogHeader(currentDateComponents: $vm.currentLogDateComponents)
       Divider()
       Spacer()
       if let log = vm.currentLog {

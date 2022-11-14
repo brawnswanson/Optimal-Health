@@ -12,7 +12,7 @@ class DailyPortionLogViewModel: ObservableObject {
   
   @Published var currentLog: DailyLog?
   @Published var dailyLogs: [DailyLog] = []
-  @Published var currentLogDate: DateComponents
+  @Published var currentLogDateComponents: DateComponents
   
   private let contextChangePublisher = NotificationCenter.default.publisher(for: Notification.Name.NSManagedObjectContextObjectsDidChange)
   
@@ -24,29 +24,33 @@ class DailyPortionLogViewModel: ObservableObject {
   
   init() {
     
-    if let lastViewedDateInUserDefaults = UserDefaults.standard.value(forKey: "currentViewDate") as? Data, let lastViewedDateComponents = try? decoder.decode(DateComponents.self, from: lastViewedDateInUserDefaults) {
-      currentLogDate = lastViewedDateComponents
+    if let lastViewedDateInUserDefaults = UserDefaults.standard.value(forKey: Constants.UserDefaultKeys.lastViewLogDate) as? Data, let lastViewedDateComponents = try? decoder.decode(DateComponents.self, from: lastViewedDateInUserDefaults) {
+      currentLogDateComponents = lastViewedDateComponents
     } else {
-      currentLogDate = calendar.dateComponents([.year, .month, .day], from: Date())
+      currentLogDateComponents = calendar.dateComponents([.year, .month, .day], from: Date())
     }
     
     //Subscribe to publishers
-    updateCurrentViewDateInUserDefaults()
-    fetchCurrentLogSubscription()
+    didUpdateCurrentViewDate()
+    contextDidChangeRefreshLog()
   }
 }
 
 //MARK: - Combine subscribe functions
 extension DailyPortionLogViewModel {
-  func updateCurrentViewDateInUserDefaults() {
-    $currentLogDate
+  func didUpdateCurrentViewDate() {
+    $currentLogDateComponents
+      .map {
+        self.updateLastViewedDate(with: $0)
+        return $0
+      }
       .map { try? self.fetchLog(for: $0) }
       .assign(to: &$currentLog)
   }
   
-  func fetchCurrentLogSubscription() {
+  func contextDidChangeRefreshLog() {
     contextChangePublisher
-      .map { _ in self.currentLogDate }
+      .map { _ in self.currentLogDateComponents }
       .map { try? self.fetchLog(for: $0) }
       .assign(to: &$currentLog)
   }
@@ -56,8 +60,9 @@ extension DailyPortionLogViewModel {
 extension DailyPortionLogViewModel {
   func createNewLog() {
     let newLog = DailyLog(context: CoreDataController.shared.context)
-    newLog.date = currentLogDate
+    newLog.date = currentLogDateComponents
     newLog.id = UUID()
+    try? CoreDataController.shared.context.save()
   }
   
   func fetchLog(for date: DateComponents) throws -> DailyLog? {
@@ -65,8 +70,18 @@ extension DailyPortionLogViewModel {
     let results = try CoreDataController.shared.context.fetch(fetchRequest)
     return results.first
   }
+}
+
+//MARK: - UserDefaults interactions
+extension DailyPortionLogViewModel {
   
-  func findNextLog() {
-    
+  func updateLastViewedDate(with dateComponents: DateComponents) {
+    let data = try? encoder.encode(dateComponents)
+    UserDefaults.standard.set(data, forKey: Constants.UserDefaultKeys.lastViewLogDate)
+  }
+  
+  func getLastViewedDate() -> DateComponents? {
+    guard let lastViewedDateInUserDefaults = UserDefaults.standard.value(forKey: Constants.UserDefaultKeys.lastViewLogDate) as? Data, let lastViewedDateComponents = try? decoder.decode(DateComponents.self, from: lastViewedDateInUserDefaults) else { return nil }
+    return lastViewedDateComponents
   }
 }

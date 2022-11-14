@@ -17,4 +17,7 @@ enum Constants {
     public static let dailyLogModelName = "DailyLogModel"
     public static let coreDataFatalError = "Error loading data"
   }
+  enum UserDefaultKeys {
+    public static let lastViewLogDate = "lastViewedLogDate"
+  }
 }

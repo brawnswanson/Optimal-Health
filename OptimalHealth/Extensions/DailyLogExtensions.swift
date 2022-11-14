@@ -15,4 +15,9 @@ extension DailyLog {
     request.predicate = NSPredicate(format: "date==%@", date as CVarArg)
     return request
   }
+  
+  var nutrientsArray: [NutrientEntry] {
+    guard let nutrients = nutrientEntries, let array = nutrients.array as? [NutrientEntry] else { return [] }
+    return array
+  }
 }

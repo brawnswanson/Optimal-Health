@@ -10,14 +10,15 @@ import SwiftUI
 struct DailyPortionLogView: View {
   
   @StateObject private var vm = DailyPortionLogViewModel()
+  @State var currentLogViewVisible: Bool = false
   
   var body: some View {
     VStack {
       PortionLogHeader(currentDateComponents: $vm.currentLogDateComponents)
       Divider()
       Spacer()
-      if let log = vm.currentLog {
-        NutrientsView(log: log)
+      if currentLogViewVisible {
+        NutrientsView(nutrients: $vm.currentLogNutrients)
       } else {
         Button {
           vm.createNewLog()
@@ -33,6 +34,13 @@ struct DailyPortionLogView: View {
       }
       Spacer()
     }
+    .onReceive(vm.$currentLog, perform: { log in
+      guard let _ = log else {
+        currentLogViewVisible = false
+        return
+      }
+      currentLogViewVisible = true
+    })
   }
 }
 

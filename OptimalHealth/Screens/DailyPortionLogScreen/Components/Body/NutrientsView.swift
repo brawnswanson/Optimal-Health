@@ -6,17 +6,16 @@
 //
 
 import SwiftUI
+import Combine
 
 struct NutrientsView: View {
   
-  let log: DailyLog
+  @Binding var nutrients: [NutrientEntry]
   
   var body: some View {
     List {
-      ForEach(Nutrient.allCases, id:\.self) { nutrient in
-        NutrientSectionView(nutrient: nutrient, minimumWidth: 30.0)
-        Divider()
-          .padding(.vertical)
+      ForEach($nutrients, id:\.id) { $nutrient in
+        NutrientSectionView(nutrient: $nutrient)
       }
     }
   }
@@ -24,6 +23,6 @@ struct NutrientsView: View {
 
 struct NutrientsView_Previews: PreviewProvider {
   static var previews: some View {
-    NutrientsView(log: DailyLog())
+    NutrientsView(nutrients: .constant([]))
   }
 }

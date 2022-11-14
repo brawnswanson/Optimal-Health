@@ -11,8 +11,9 @@ import Combine
 class DailyPortionLogViewModel: ObservableObject {
   
   @Published var currentLog: DailyLog?
-  @Published var dailyLogs: [DailyLog] = []
+  @Published var currentLogNutrients: [NutrientEntry] = []
   @Published var currentLogDateComponents: DateComponents
+  let updateNutrientConsumedPublisher = PassthroughSubject<(NutrientEntry, Int), Never>()
   
   private let contextChangePublisher = NotificationCenter.default.publisher(for: Notification.Name.NSManagedObjectContextObjectsDidChange)
   
@@ -30,9 +31,19 @@ class DailyPortionLogViewModel: ObservableObject {
       currentLogDateComponents = calendar.dateComponents([.year, .month, .day], from: Date())
     }
     
+    $currentLog
+      .map { $0?.nutrientsArray }
+      .replaceNil(with: [])
+      .assign(to: &$currentLogNutrients)
+    
     //Subscribe to publishers
     didUpdateCurrentViewDate()
     contextDidChangeRefreshLog()
+    updateNutrientConsumedPublisher
+      .sink { nutrient, amount in
+        self.update(nutrient: nutrient, portionsConsumedBy: amount)
+      }
+      .store(in: &subscriptions)
   }
 }
 
@@ -50,9 +61,9 @@ extension DailyPortionLogViewModel {
   
   func contextDidChangeRefreshLog() {
     contextChangePublisher
-      .map { _ in self.currentLogDateComponents }
-      .map { try? self.fetchLog(for: $0) }
+      .map { _ in try? self.fetchLog(for: self.currentLogDateComponents)}
       .assign(to: &$currentLog)
+  
   }
 }
 
@@ -62,6 +73,14 @@ extension DailyPortionLogViewModel {
     let newLog = DailyLog(context: CoreDataController.shared.context)
     newLog.date = currentLogDateComponents
     newLog.id = UUID()
+    for nutrient in Nutrient.allCases {
+      let nutrientEntry = NutrientEntry(context: CoreDataController.shared.context)
+      nutrientEntry.nameData = nutrient.rawValue
+      nutrientEntry.id = UUID()
+      nutrientEntry.portionsConsumed = 0
+      nutrientEntry.portionsRecommended = 8
+      newLog.addToNutrientEntries(nutrientEntry)
+    }
     try? CoreDataController.shared.context.save()
   }
   
@@ -69,6 +88,13 @@ extension DailyPortionLogViewModel {
     let fetchRequest = DailyLog.dailyLogFetchRequest(for: date)
     let results = try CoreDataController.shared.context.fetch(fetchRequest)
     return results.first
+  }
+  
+  func update(nutrient: NutrientEntry, portionsConsumedBy value: Int) {
+    guard Int(nutrient.portionsConsumed) + value >= 0, Int(nutrient.portionsConsumed) + value <= 12 else { return }
+    let newPortionsConsumed = Int(nutrient.portionsConsumed) + value
+    nutrient.portionsConsumed = Int16(newPortionsConsumed)
+    try? CoreDataController.shared.context.save()
   }
 }
 

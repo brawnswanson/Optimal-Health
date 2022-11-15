@@ -63,7 +63,6 @@ extension DailyPortionLogViewModel {
     contextChangePublisher
       .map { _ in try? self.fetchLog(for: self.currentLogDateComponents)}
       .assign(to: &$currentLog)
-  
   }
 }
 
@@ -93,7 +92,7 @@ extension DailyPortionLogViewModel {
   func update(nutrient: NutrientEntry, portionsConsumedBy value: Int) {
     guard Int(nutrient.portionsConsumed) + value >= 0, Int(nutrient.portionsConsumed) + value <= 12 else { return }
     let newPortionsConsumed = Int(nutrient.portionsConsumed) + value
-    nutrient.portionsConsumed = Int16(newPortionsConsumed)
+    nutrient.portionsConsumed = Int32(newPortionsConsumed)
     try? CoreDataController.shared.context.save()
   }
 }

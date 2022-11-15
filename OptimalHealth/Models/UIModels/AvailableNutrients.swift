@@ -13,6 +13,7 @@ enum Nutrient: String, CustomStringConvertible, CaseIterable {
   var description: String {
     self.rawValue.uppercased()
   }
+  
   var color: Color {
     switch self {
     case .proteins:
@@ -25,4 +26,22 @@ enum Nutrient: String, CustomStringConvertible, CaseIterable {
       return .green
     }
   }
+  
+  var userDefaultKey: String {
+    switch self {
+    case .proteins:
+      return Constants.UserDefaultKeys.numberOfTappableProteins
+    case .fats:
+      return Constants.UserDefaultKeys.numberOfTappableFats
+    case .carbs:
+      return Constants.UserDefaultKeys.numberOfTappableCarbs
+    case .vegetables:
+      return Constants.UserDefaultKeys.numberOfTappableVegs
+    }
+  }
+  
+  var numberOfVisiblePortions: Int {
+    return UserDefaults.standard.value(forKey: userDefaultKey) as? Int ?? 20
+  }
+  
 }

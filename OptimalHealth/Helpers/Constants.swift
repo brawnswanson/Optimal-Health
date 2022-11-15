@@ -19,5 +19,15 @@ enum Constants {
   }
   enum UserDefaultKeys {
     public static let lastViewLogDate = "lastViewedLogDate"
+    public static let numberOfTappableProteins = "tappableProteins"
+    public static let numberOfTappableFats = "tappableFats"
+    public static let numberOfTappableCarbs = "tappableCarbs"
+    public static let numberOfTappableVegs = "tappableVegs"
+  }
+  enum BinaryConstants {
+    public static let maxTappable = 0b11111111111111111111
+  }
+  enum InitialDefaults {
+    public static let visiblePortions = 20
   }
 }

@@ -6,6 +6,7 @@
 //
 //TODO: - Need to fill in the tapped circle, using index isn't working as desired. Maybe an array of filled values created somehow?
 
+import Foundation
 import SwiftUI
 import Combine
 
@@ -17,10 +18,17 @@ struct TappablePortionView: View {
     Nutrient(rawValue: nutrient.name) ?? Nutrient.allCases.first!
   }
   var filled: Bool {
-    nutrient.portionsConsumed >= index
+    let filledPortions = Int(nutrient.portionsConsumed)
+    let currentCircle = 1 << index
+    return filledPortions & currentCircle != 0 ? true : false
   }
+  
   var extraPortion: Bool {
-    index > nutrient.portionsRecommended
+    var recommendedPortions = 0
+    for _ in 0..<nutrient.portionsRecommended {
+      recommendedPortions = recommendedPortions << 1 + 1
+    }
+    return recommendedPortions & (0b1 << index) != 0 ? false: true
   }
   
   var body: some View {
@@ -35,12 +43,12 @@ struct TappablePortionView: View {
       }
       .scaledToFit()
     }
-    .tapAndLongPressGesture(nutrient: $nutrient)
+    .tapAndLongPressGesture(nutrient: $nutrient, index: index)
   }
   
   @ViewBuilder
   func circleBorder() -> some View {
-    if extraPortion && !filled {
+    if extraPortion {
       Circle()
         .stroke(nutrientSetting.color, style: StrokeStyle(lineWidth: 2.0, dash: [5.0]))
         .opacity(0.5)
@@ -51,8 +59,8 @@ struct TappablePortionView: View {
   }
 }
 
-//struct TappablePortionView_Previews: PreviewProvider {
-//  static var previews: some View {
-//    TappablePortionView(color: .orange, filled: true, extraPortion: false)
-//  }
-//}
+struct TappablePortionView_Previews: PreviewProvider {
+  static var previews: some View {
+    TappablePortionView(nutrient: .constant(NutrientEntry()), index: 0)
+  }
+}

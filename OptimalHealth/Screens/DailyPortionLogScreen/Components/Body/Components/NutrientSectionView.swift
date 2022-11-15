@@ -16,6 +16,15 @@ struct NutrientSectionView: View {
     Nutrient(rawValue: nutrient.name) ?? Nutrient.allCases.first!
   }
   
+  var columns: [GridItem] {
+    var array = [GridItem]()
+    let numberOfColumns = nutrientSetting.numberOfVisiblePortions % 2 == 0 ? nutrientSetting.numberOfVisiblePortions / 2 : nutrientSetting.numberOfVisiblePortions / 2 + 1
+    for _ in 0..<numberOfColumns {
+      array.append(GridItem(.flexible(minimum:25)))
+    }
+    return array
+  }
+  
   var body: some View {
     VStack {
       HStack {
@@ -24,8 +33,8 @@ struct NutrientSectionView: View {
           .foregroundColor(nutrientSetting.color)
         Spacer()
       }
-      LazyHGrid(rows: [.init(.flexible(minimum: 25)), .init(.flexible(minimum: 25))]) {
-        ForEach(0..<12) { index in
+      LazyVGrid(columns: columns) {
+        ForEach(0..<nutrientSetting.numberOfVisiblePortions, id:\.self) { index in
           TappablePortionView(nutrient: $nutrient, index: index)
         }
       }

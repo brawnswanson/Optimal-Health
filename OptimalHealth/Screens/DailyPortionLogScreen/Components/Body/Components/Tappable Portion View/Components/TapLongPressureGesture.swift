@@ -11,27 +11,38 @@ import Combine
 struct TapAndLongPressGesture: ViewModifier {
   
   @Binding var nutrient: NutrientEntry
+  let index: Int
+  var currentBit: Int {
+    1 << index
+  }
   
   func body(content: Content) -> some View {
     content
       .simultaneousGesture(LongPressGesture().onEnded({ _ in
-        update(nutrient: nutrient, portionsConsumedBy: -1)
+        turnOffBit()
       }))
       .simultaneousGesture(TapGesture().onEnded({ _ in
-        update(nutrient: nutrient, portionsConsumedBy: 1)
+        turnOnBit()
       }))
   }
   
-  func update(nutrient: NutrientEntry, portionsConsumedBy value: Int) {
-    guard Int(nutrient.portionsConsumed) + value >= 0, Int(nutrient.portionsConsumed) + value <= 12 else { return }
-    let newPortionsConsumed = Int(nutrient.portionsConsumed) + value
-    nutrient.portionsConsumed = Int16(newPortionsConsumed)
+  func turnOnBit() {
+    guard currentBit & Int(nutrient.portionsConsumed) == 0 else { return }
+    let newPortionsConsumed = Int(nutrient.portionsConsumed) ^ currentBit
+    nutrient.portionsConsumed = Int32(newPortionsConsumed)
+    try? CoreDataController.shared.context.save()
+  }
+  
+  func turnOffBit() {
+    guard currentBit & Int(nutrient.portionsConsumed) != 0 else { return }
+    let newPortionsConsumed = Int(nutrient.portionsConsumed) ^ currentBit
+    nutrient.portionsConsumed = Int32(newPortionsConsumed)
     try? CoreDataController.shared.context.save()
   }
 }
 
 extension View {
-  func tapAndLongPressGesture(nutrient: Binding<NutrientEntry>) -> some View {
-    modifier(TapAndLongPressGesture(nutrient: nutrient))
+  func tapAndLongPressGesture(nutrient: Binding<NutrientEntry>, index: Int) -> some View {
+    modifier(TapAndLongPressGesture(nutrient: nutrient, index: index))
   }
 }

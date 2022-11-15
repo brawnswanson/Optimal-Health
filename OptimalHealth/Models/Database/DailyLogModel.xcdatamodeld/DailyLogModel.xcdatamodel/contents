@@ -3,13 +3,13 @@
     <entity name="DailyLog" representedClassName="DailyLog" syncable="YES" codeGenerationType="class">
         <attribute name="date" attributeType="Transformable" valueTransformerName="DateComponentsTransformer" customClassName="DateComponents"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="nutrientEntries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NutrientEntry" inverseName="dailyLog" inverseEntity="NutrientEntry"/>
+        <relationship name="nutrientEntries" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="NutrientEntry" inverseName="dailyLog" inverseEntity="NutrientEntry"/>
     </entity>
     <entity name="NutrientEntry" representedClassName="NutrientEntry" syncable="YES" codeGenerationType="class">
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="nameData" attributeType="String"/>
-        <attribute name="portionsConsumed" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="portionsRecommended" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="portionsConsumed" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="portionsRecommended" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="dailyLog" maxCount="1" deletionRule="Nullify" destinationEntity="DailyLog" inverseName="nutrientEntries" inverseEntity="DailyLog"/>
     </entity>
 </model>

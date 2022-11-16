@@ -21,8 +21,8 @@ struct NutrientsView: View {
   }
 }
 
-struct NutrientsView_Previews: PreviewProvider {
-  static var previews: some View {
-    NutrientsView(nutrients: .constant([]))
-  }
-}
+//struct NutrientsView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    NutrientsView(nutrients: .constant([]))
+//  }
+//}

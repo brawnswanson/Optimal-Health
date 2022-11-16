@@ -44,8 +44,8 @@ struct DailyPortionLogView: View {
   }
 }
 
-struct DailyPortionLogView_Previews: PreviewProvider {
-  static var previews: some View {
-    DailyPortionLogView()
-  }
-}
+//struct DailyPortionLogView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    DailyPortionLogView()
+//  }
+//}

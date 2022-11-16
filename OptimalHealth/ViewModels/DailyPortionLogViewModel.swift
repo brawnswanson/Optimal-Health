@@ -77,7 +77,7 @@ extension DailyPortionLogViewModel {
       nutrientEntry.nameData = nutrient.rawValue
       nutrientEntry.id = UUID()
       nutrientEntry.portionsConsumed = 0
-      nutrientEntry.portionsRecommended = 8
+      nutrientEntry.portionsRecommended = UserDefaults.standard.value(forKey: nutrient.userDefaultKey) as? Int32 ?? 8
       newLog.addToNutrientEntries(nutrientEntry)
     }
     try? CoreDataController.shared.context.save()

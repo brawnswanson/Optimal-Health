@@ -16,6 +16,7 @@
 		C429ECE7291D2460005DBCE4 /* DailyLogModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C429ECE5291D2460005DBCE4 /* DailyLogModel.xcdatamodeld */; };
 		C429ECE9291D2649005DBCE4 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C429ECE8291D2649005DBCE4 /* CoreDataController.swift */; };
 		C451EC60290AD2450030F1E0 /* DailyPortionLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C451EC5F290AD2450030F1E0 /* DailyPortionLogView.swift */; };
+		C46103712925295C000A3C01 /* SettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46103702925295C000A3C01 /* SettingsSheet.swift */; };
 		C4677250290AC05100C9FFC1 /* TapLongPressureGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C467724F290AC05100C9FFC1 /* TapLongPressureGesture.swift */; };
 		C47913ED291D61C700047E61 /* DailyPortionLogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47913EC291D61C700047E61 /* DailyPortionLogViewModel.swift */; };
 		C47913EF291D646400047E61 /* NutrientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47913EE291D646400047E61 /* NutrientsView.swift */; };
@@ -39,6 +40,7 @@
 		C429ECE6291D2460005DBCE4 /* DailyLogModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DailyLogModel.xcdatamodel; sourceTree = "<group>"; };
 		C429ECE8291D2649005DBCE4 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		C451EC5F290AD2450030F1E0 /* DailyPortionLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPortionLogView.swift; sourceTree = "<group>"; };
+		C46103702925295C000A3C01 /* SettingsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSheet.swift; sourceTree = "<group>"; };
 		C467724F290AC05100C9FFC1 /* TapLongPressureGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapLongPressureGesture.swift; sourceTree = "<group>"; };
 		C47913EC291D61C700047E61 /* DailyPortionLogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPortionLogViewModel.swift; sourceTree = "<group>"; };
 		C47913EE291D646400047E61 /* NutrientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsView.swift; sourceTree = "<group>"; };
@@ -134,6 +136,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		C461036F29252948000A3C01 /* SettingsSheet */ = {
+			isa = PBXGroup;
+			children = (
+				C46103702925295C000A3C01 /* SettingsSheet.swift */,
+			);
+			path = SettingsSheet;
+			sourceTree = "<group>";
+		};
 		C467724E290AC03E00C9FFC1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +232,7 @@
 			children = (
 				C49283A928C6538E005770A8 /* ContentView.swift */,
 				C4677251290AC06B00C9FFC1 /* DailyPortionLogScreen */,
+				C461036F29252948000A3C01 /* SettingsSheet */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -311,6 +322,7 @@
 				C429ECDD291D0994005DBCE4 /* SFSymbolButton.swift in Sources */,
 				C429ECD8291D0580005DBCE4 /* NutrientSectionView.swift in Sources */,
 				C49F93042920FFC2007AD4DB /* ValueTransformers.swift in Sources */,
+				C46103712925295C000A3C01 /* SettingsSheet.swift in Sources */,
 				C49283AA28C6538E005770A8 /* ContentView.swift in Sources */,
 				C47913ED291D61C700047E61 /* DailyPortionLogViewModel.swift in Sources */,
 				C451EC60290AD2450030F1E0 /* DailyPortionLogView.swift in Sources */,

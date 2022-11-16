@@ -25,11 +25,15 @@ enum Constants {
     public static let numberOfTappableFats = "tappableFats"
     public static let numberOfTappableCarbs = "tappableCarbs"
     public static let numberOfTappableVegs = "tappableVegs"
+    public static let recommendedProteins = "recommendeProteins"
+    public static let recommendedCarbs = "recommendedCarbs"
+    public static let recommendedVeg = "recommendedVeg"
+    public static let recommendedFats = "recommendedFats"
   }
   enum BinaryConstants {
     public static let maxTappable = 0b11111111111111111111
   }
   enum InitialDefaults {
-    public static let visiblePortions = 20
+    public static let visiblePortions = 12.0
   }
 }

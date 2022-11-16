@@ -28,13 +28,18 @@ struct PortionLogHeader: View {
   
   var body: some View {
     HStack {
-      SFSymbolButton(image: Constants.Images.chevronLeft, action: { changeDate(component: .month, by: -1) })
+      SFSymbolButton(image: Constants.Images.doubleChevronLeft, action: { changeDate(component: .month, by: -1) })
       SFSymbolButton(image: Constants.Images.chevronLeft, action: { changeDate(component: .day, by: -1) })
       Text("\(currentDateString)")
       SFSymbolButton(image: Constants.Images.chevronRight, action: { changeDate(component: .day, by: 1) })
         .disabled(fowardDayDisabled)
-      SFSymbolButton(image: Constants.Images.chevronRight, action: { changeDate(component: .month, by: 1) })
+      SFSymbolButton(image: Constants.Images.doubleChevronright, action: { changeDate(component: .month, by: 1) })
         .disabled(forwardMonthDisabled)
+      Button {
+        currentDateComponents = returnDateComponents(Date())
+      } label: {
+        Text("Today")
+      }
     }
   }
 }

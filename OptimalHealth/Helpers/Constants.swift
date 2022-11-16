@@ -12,6 +12,8 @@ enum Constants {
   enum Images {
     public static let chevronLeft = Image(systemName: "chevron.left")
     public static let chevronRight = Image(systemName: "chevron.right")
+    public static let doubleChevronLeft = Image(systemName: "chevron.left.2")
+    public static let doubleChevronright = Image(systemName: "chevron.right.2")
   }
   enum CoreDataInfo {
     public static let dailyLogModelName = "DailyLogModel"

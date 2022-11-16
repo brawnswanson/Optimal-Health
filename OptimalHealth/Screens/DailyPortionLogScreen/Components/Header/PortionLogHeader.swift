@@ -11,6 +11,19 @@ struct PortionLogHeader: View {
   
   @Binding var currentDateComponents: DateComponents
   
+  var fowardDayDisabled: Bool {
+    let today = Date()
+    let todayComponents = returnDateComponents(today)
+    return currentDateComponents == todayComponents ? true : false
+  }
+  
+  var forwardMonthDisabled: Bool {
+    guard let currentViewedDate = cal.date(from: currentDateComponents), let oneMonthFromCurrent = cal.date(byAdding: .month, value: 1, to: currentViewedDate) else { return false }
+    if cal.isDate(oneMonthFromCurrent, inSameDayAs: Date()) { return false }
+    else if oneMonthFromCurrent > Date() { return true }
+    else { return false }
+  }
+  
   let cal = Calendar.current
   
   var body: some View {
@@ -19,7 +32,9 @@ struct PortionLogHeader: View {
       SFSymbolButton(image: Constants.Images.chevronLeft, action: { changeDate(component: .day, by: -1) })
       Text("\(currentDateString)")
       SFSymbolButton(image: Constants.Images.chevronRight, action: { changeDate(component: .day, by: 1) })
+        .disabled(fowardDayDisabled)
       SFSymbolButton(image: Constants.Images.chevronRight, action: { changeDate(component: .month, by: 1) })
+        .disabled(forwardMonthDisabled)
     }
   }
 }
@@ -28,6 +43,8 @@ extension PortionLogHeader {
   
   func changeDate(component: Calendar.Component, by value: Int) {
     guard let currentDate = cal.date(from: currentDateComponents), let newDate = cal.date(byAdding: component, value: value, to: currentDate) else { return }
+    let todayComponents = returnDateComponents(Date())
+    
     currentDateComponents = returnDateComponents(newDate)
   }
   

@@ -13,11 +13,11 @@ struct NutrientsView: View {
   @Binding var nutrients: [NutrientEntry]
   
   var body: some View {
-    List {
+    VStack {
       ForEach($nutrients, id:\.id) { $nutrient in
         NutrientSectionView(nutrient: $nutrient)
       }
-    }
+    }.padding()
   }
 }
 

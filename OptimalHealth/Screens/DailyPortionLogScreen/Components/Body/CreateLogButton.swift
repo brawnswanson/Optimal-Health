@@ -13,9 +13,7 @@ struct CreateLogButton: View {
   
   var body: some View {
     Button {
-      #if !targetEnvironment(simulator)
       vm.createNewLog()
-      #endif
     } label: {
       VStack {
         Constants.Images.plus

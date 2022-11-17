@@ -15,13 +15,11 @@ public final class CoreDataController {
   
   private lazy var container: NSPersistentContainer = {
     let persistentContainer = NSPersistentContainer(name: Constants.CoreDataInfo.dailyLogModelName)
-    #if !targetEnvironment(simulator)
     persistentContainer.loadPersistentStores { description, error in
       if error != nil {
         fatalError(Constants.CoreDataInfo.coreDataFatalError)
       }
     }
-    #endif
     return persistentContainer
   }()
   

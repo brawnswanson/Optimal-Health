@@ -15,7 +15,7 @@ struct SFSymbolButton: View {
       Button {
         action()
       } label: {
-        image
+        image.font(.system(size: 18))
       }
     }
 }

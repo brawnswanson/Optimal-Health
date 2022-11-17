@@ -33,6 +33,7 @@ struct PortionLogHeader: View {
         SFSymbolButton(image: Constants.Images.doubleChevronLeft, action: { changeDate(component: .month, by: -1) })
         SFSymbolButton(image: Constants.Images.chevronLeft, action: { changeDate(component: .day, by: -1) })
         Text("\(currentDateString)")
+          .font(.system(size: 18))
         SFSymbolButton(image: Constants.Images.chevronRight, action: { changeDate(component: .day, by: 1) })
           .disabled(fowardDayDisabled)
         SFSymbolButton(image: Constants.Images.doubleChevronright, action: { changeDate(component: .month, by: 1) })
@@ -44,12 +45,14 @@ struct PortionLogHeader: View {
         currentDateComponents = returnDateComponents(Date())
       } label: {
         Text("Today")
+          .font(.system(size: 18))
       }
       Spacer()
       Button {
         isSettingsSheetDisplayed.toggle()
       } label: {
         Image(systemName: "gearshape")
+          .font(.system(size: 18))
       }
       .padding((.trailing))
       .sheet(isPresented: $isSettingsSheetDisplayed) {

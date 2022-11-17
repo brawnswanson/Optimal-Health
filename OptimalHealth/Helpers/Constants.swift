@@ -14,6 +14,7 @@ enum Constants {
     public static let chevronRight = Image(systemName: "chevron.right")
     public static let doubleChevronLeft = Image(systemName: "chevron.left.2")
     public static let doubleChevronright = Image(systemName: "chevron.right.2")
+    public static let plus = Image(systemName: "plus")
   }
   enum CoreDataInfo {
     public static let dailyLogModelName = "DailyLogModel"
@@ -21,19 +22,24 @@ enum Constants {
   }
   enum UserDefaultKeys {
     public static let lastViewLogDate = "lastViewedLogDate"
-    public static let numberOfTappableProteins = "tappableProteins"
-    public static let numberOfTappableFats = "tappableFats"
-    public static let numberOfTappableCarbs = "tappableCarbs"
-    public static let numberOfTappableVegs = "tappableVegs"
     public static let recommendedProteins = "recommendeProteins"
     public static let recommendedCarbs = "recommendedCarbs"
     public static let recommendedVeg = "recommendedVeg"
     public static let recommendedFats = "recommendedFats"
+    public static let defaultStartUp = "defaultStartUp"
   }
   enum BinaryConstants {
     public static let maxTappable = 0b11111111111111111111
   }
   enum InitialDefaults {
     public static let visiblePortions = 12.0
+  }
+  enum Text {
+    public static let createLogButtonDescription = "Add new log"
+    public static let recommendedPortionsSettingLabel = "Recommended Portions"
+    public static let defaultDateSettingLabel = "On Startup view"
+  }
+  enum Dimensions {
+    public static let createLogButtonMaxWidth = 75.0
   }
 }

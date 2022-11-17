@@ -40,6 +40,10 @@ enum Nutrient: String, CustomStringConvertible, CaseIterable {
     }
   }
   
+  var recommendedPortions: Double {
+    UserDefaults.standard.value(forKey: self.userDefaultKey) as? Double ?? 8.0
+  }
+  
   var numberOfVisiblePortions: Int {
     return Int(Constants.InitialDefaults.visiblePortions)
   }

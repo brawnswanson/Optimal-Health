@@ -4,7 +4,6 @@
 //
 //  Created by Daniel Pressner on 27.10.22.
 //
-//TODO: - Need to fill in the tapped circle, using index isn't working as desired. Maybe an array of filled values created somehow?
 
 import Foundation
 import SwiftUI
@@ -48,7 +47,7 @@ struct TappablePortionView: View {
   
   @ViewBuilder
   func circleBorder() -> some View {
-    if extraPortion {
+    if extraPortion && !filled {
       Circle()
         .stroke(nutrientSetting.color, style: StrokeStyle(lineWidth: 2.0, dash: [5.0]))
         .opacity(0.5)

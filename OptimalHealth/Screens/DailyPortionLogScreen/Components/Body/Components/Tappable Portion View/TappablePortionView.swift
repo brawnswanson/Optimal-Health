@@ -31,9 +31,7 @@ struct TappablePortionView: View {
   }
   
   var body: some View {
-    Button {
-      
-    } label: {
+    Button {} label: {
       ZStack {
         Circle()
           .foregroundColor(nutrientSetting.color)
@@ -41,6 +39,7 @@ struct TappablePortionView: View {
         circleBorder()
       }
       .scaledToFit()
+      .frame(maxWidth: 45.0)
     }
     .tapAndLongPressGesture(nutrient: $nutrient, index: index)
   }

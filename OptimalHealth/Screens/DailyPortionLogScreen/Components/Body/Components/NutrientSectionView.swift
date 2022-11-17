@@ -29,7 +29,7 @@ struct NutrientSectionView: View {
     VStack {
       HStack {
         Text("\(nutrientSetting.description)")
-          .font(.title)
+          .font(.title2)
           .foregroundColor(nutrientSetting.color)
         Spacer()
       }
@@ -38,6 +38,7 @@ struct NutrientSectionView: View {
           TappablePortionView(nutrient: $nutrient, index: index)
         }
       }
+      Divider()
     }
   }
 }

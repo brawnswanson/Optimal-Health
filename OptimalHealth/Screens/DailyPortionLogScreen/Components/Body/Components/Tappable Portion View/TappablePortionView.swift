@@ -59,8 +59,8 @@ struct TappablePortionView: View {
   }
 }
 
-struct TappablePortionView_Previews: PreviewProvider {
-  static var previews: some View {
-    TappablePortionView(nutrient: .constant(NutrientEntry()), index: 0)
-  }
-}
+//struct TappablePortionView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    TappablePortionView(nutrient: .constant(NutrientEntry()), index: 0)
+//  }
+//}

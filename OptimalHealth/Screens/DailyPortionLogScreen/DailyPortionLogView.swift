@@ -20,17 +20,7 @@ struct DailyPortionLogView: View {
       if currentLogViewVisible {
         NutrientsView(nutrients: $vm.currentLogNutrients)
       } else {
-        Button {
-          vm.createNewLog()
-        } label: {
-          VStack {
-            Image(systemName: "plus")
-              .resizable()
-              .scaledToFit()
-              .frame(maxWidth: 75)
-            Text("Add new log")
-          }
-        }
+        CreateLogButton(vm: vm)
       }
       Spacer()
     }

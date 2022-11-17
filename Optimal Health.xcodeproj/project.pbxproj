@@ -16,14 +16,24 @@
 		C429ECE7291D2460005DBCE4 /* DailyLogModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C429ECE5291D2460005DBCE4 /* DailyLogModel.xcdatamodeld */; };
 		C429ECE9291D2649005DBCE4 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C429ECE8291D2649005DBCE4 /* CoreDataController.swift */; };
 		C451EC60290AD2450030F1E0 /* DailyPortionLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C451EC5F290AD2450030F1E0 /* DailyPortionLogView.swift */; };
+		C46103712925295C000A3C01 /* SettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46103702925295C000A3C01 /* SettingsSheet.swift */; };
 		C4677250290AC05100C9FFC1 /* TapLongPressureGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C467724F290AC05100C9FFC1 /* TapLongPressureGesture.swift */; };
 		C47913ED291D61C700047E61 /* DailyPortionLogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47913EC291D61C700047E61 /* DailyPortionLogViewModel.swift */; };
 		C47913EF291D646400047E61 /* NutrientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47913EE291D646400047E61 /* NutrientsView.swift */; };
 		C47913F3291D659800047E61 /* AvailableNutrients.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47913F2291D659800047E61 /* AvailableNutrients.swift */; };
+		C47D6EA52925923500352C84 /* StartupScreenSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EA42925923500352C84 /* StartupScreenSelection.swift */; };
+		C47D6EA7292592B500352C84 /* DefaultStartupPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EA6292592B500352C84 /* DefaultStartupPicker.swift */; };
+		C47D6EA929259AE700352C84 /* UserDefaultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EA829259AE700352C84 /* UserDefaultsController.swift */; };
+		C47D6EAB29259C8400352C84 /* CreateLogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EAA29259C8400352C84 /* CreateLogButton.swift */; };
+		C47D6EAD2926182900352C84 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EAC2926182900352C84 /* DismissButton.swift */; };
+		C47D6EAF2926183A00352C84 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EAE2926183A00352C84 /* HeaderView.swift */; };
+		C47D6EB329261B4800352C84 /* RecommendedPortionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EB229261B4800352C84 /* RecommendedPortionsSection.swift */; };
+		C47D6EB529261B8900352C84 /* DefaultDateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EB429261B8900352C84 /* DefaultDateSection.swift */; };
 		C49283A828C6538E005770A8 /* Optimal_HealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49283A728C6538E005770A8 /* Optimal_HealthApp.swift */; };
 		C49283AA28C6538E005770A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49283A928C6538E005770A8 /* ContentView.swift */; };
 		C49283AC28C6538F005770A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49283AB28C6538F005770A8 /* Assets.xcassets */; };
 		C49283AF28C6538F005770A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49283AE28C6538F005770A8 /* Preview Assets.xcassets */; };
+		C49D59FF29254ED000B046CF /* RecommendedPotionsSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49D59FE29254ED000B046CF /* RecommendedPotionsSlider.swift */; };
 		C49EA616290A934000A1AF4C /* TappablePortionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49EA615290A934000A1AF4C /* TappablePortionView.swift */; };
 		C49F93042920FFC2007AD4DB /* ValueTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F93032920FFC1007AD4DB /* ValueTransformers.swift */; };
 		C4D4F284291FF4FD00224721 /* DailyLogExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D4F283291FF4FD00224721 /* DailyLogExtensions.swift */; };
@@ -39,15 +49,25 @@
 		C429ECE6291D2460005DBCE4 /* DailyLogModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DailyLogModel.xcdatamodel; sourceTree = "<group>"; };
 		C429ECE8291D2649005DBCE4 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		C451EC5F290AD2450030F1E0 /* DailyPortionLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPortionLogView.swift; sourceTree = "<group>"; };
+		C46103702925295C000A3C01 /* SettingsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSheet.swift; sourceTree = "<group>"; };
 		C467724F290AC05100C9FFC1 /* TapLongPressureGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapLongPressureGesture.swift; sourceTree = "<group>"; };
 		C47913EC291D61C700047E61 /* DailyPortionLogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPortionLogViewModel.swift; sourceTree = "<group>"; };
 		C47913EE291D646400047E61 /* NutrientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsView.swift; sourceTree = "<group>"; };
 		C47913F2291D659800047E61 /* AvailableNutrients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableNutrients.swift; sourceTree = "<group>"; };
+		C47D6EA42925923500352C84 /* StartupScreenSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupScreenSelection.swift; sourceTree = "<group>"; };
+		C47D6EA6292592B500352C84 /* DefaultStartupPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStartupPicker.swift; sourceTree = "<group>"; };
+		C47D6EA829259AE700352C84 /* UserDefaultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsController.swift; sourceTree = "<group>"; };
+		C47D6EAA29259C8400352C84 /* CreateLogButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLogButton.swift; sourceTree = "<group>"; };
+		C47D6EAC2926182900352C84 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
+		C47D6EAE2926183A00352C84 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		C47D6EB229261B4800352C84 /* RecommendedPortionsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedPortionsSection.swift; sourceTree = "<group>"; };
+		C47D6EB429261B8900352C84 /* DefaultDateSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDateSection.swift; sourceTree = "<group>"; };
 		C49283A428C6538E005770A8 /* Optimal Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Optimal Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49283A728C6538E005770A8 /* Optimal_HealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optimal_HealthApp.swift; sourceTree = "<group>"; };
 		C49283A928C6538E005770A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C49283AB28C6538F005770A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C49283AE28C6538F005770A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C49D59FE29254ED000B046CF /* RecommendedPotionsSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedPotionsSlider.swift; sourceTree = "<group>"; };
 		C49EA615290A934000A1AF4C /* TappablePortionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappablePortionView.swift; sourceTree = "<group>"; };
 		C49F93032920FFC1007AD4DB /* ValueTransformers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueTransformers.swift; sourceTree = "<group>"; };
 		C4D4F283291FF4FD00224721 /* DailyLogExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLogExtensions.swift; sourceTree = "<group>"; };
@@ -77,6 +97,7 @@
 			children = (
 				C47913EE291D646400047E61 /* NutrientsView.swift */,
 				C41B70E62922488700804987 /* Components */,
+				C47D6EAA29259C8400352C84 /* CreateLogButton.swift */,
 			);
 			path = Body;
 			sourceTree = "<group>";
@@ -101,7 +122,9 @@
 		C429ECDE291D113B005DBCE4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C47D6EA32925920800352C84 /* Enums */,
 				C429ECDF291D1157005DBCE4 /* Constants.swift */,
+				C47D6EA829259AE700352C84 /* UserDefaultsController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -134,6 +157,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		C461036F29252948000A3C01 /* SettingsSheet */ = {
+			isa = PBXGroup;
+			children = (
+				C46103702925295C000A3C01 /* SettingsSheet.swift */,
+				C49D59FD29254EC100B046CF /* Components */,
+			);
+			path = SettingsSheet;
+			sourceTree = "<group>";
+		};
 		C467724E290AC03E00C9FFC1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,18 +195,38 @@
 		C47913F0291D656700047E61 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C47913F1291D657600047E61 /* UIModels */,
 				C429ECE1291D240A005DBCE4 /* Database */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		C47913F1291D657600047E61 /* UIModels */ = {
+		C47D6EA32925920800352C84 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
 				C47913F2291D659800047E61 /* AvailableNutrients.swift */,
+				C47D6EA42925923500352C84 /* StartupScreenSelection.swift */,
 			);
-			path = UIModels;
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		C47D6EB029261B0200352C84 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				C47D6EAE2926183A00352C84 /* HeaderView.swift */,
+				C47D6EAC2926182900352C84 /* DismissButton.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		C47D6EB129261B1300352C84 /* Body */ = {
+			isa = PBXGroup;
+			children = (
+				C47D6EB229261B4800352C84 /* RecommendedPortionsSection.swift */,
+				C47D6EB429261B8900352C84 /* DefaultDateSection.swift */,
+				C49D59FE29254ED000B046CF /* RecommendedPotionsSlider.swift */,
+				C47D6EA6292592B500352C84 /* DefaultStartupPicker.swift */,
+			);
+			path = Body;
 			sourceTree = "<group>";
 		};
 		C492839B28C6538E005770A8 = {
@@ -217,11 +269,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C49D59FD29254EC100B046CF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C47D6EB129261B1300352C84 /* Body */,
+				C47D6EB029261B0200352C84 /* Header */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		C49EA614290A932A00A1AF4C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				C49283A928C6538E005770A8 /* ContentView.swift */,
 				C4677251290AC06B00C9FFC1 /* DailyPortionLogScreen */,
+				C461036F29252948000A3C01 /* SettingsSheet */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -307,10 +369,14 @@
 			files = (
 				C47913EF291D646400047E61 /* NutrientsView.swift in Sources */,
 				C429ECDA291D090A005DBCE4 /* PortionLogHeader.swift in Sources */,
+				C47D6EAB29259C8400352C84 /* CreateLogButton.swift in Sources */,
 				C4677250290AC05100C9FFC1 /* TapLongPressureGesture.swift in Sources */,
 				C429ECDD291D0994005DBCE4 /* SFSymbolButton.swift in Sources */,
+				C47D6EB329261B4800352C84 /* RecommendedPortionsSection.swift in Sources */,
 				C429ECD8291D0580005DBCE4 /* NutrientSectionView.swift in Sources */,
 				C49F93042920FFC2007AD4DB /* ValueTransformers.swift in Sources */,
+				C46103712925295C000A3C01 /* SettingsSheet.swift in Sources */,
+				C47D6EAD2926182900352C84 /* DismissButton.swift in Sources */,
 				C49283AA28C6538E005770A8 /* ContentView.swift in Sources */,
 				C47913ED291D61C700047E61 /* DailyPortionLogViewModel.swift in Sources */,
 				C451EC60290AD2450030F1E0 /* DailyPortionLogView.swift in Sources */,
@@ -319,10 +385,16 @@
 				C41B70E8292260C400804987 /* NutrientsSectionViewModel.swift in Sources */,
 				C429ECE7291D2460005DBCE4 /* DailyLogModel.xcdatamodeld in Sources */,
 				C47913F3291D659800047E61 /* AvailableNutrients.swift in Sources */,
+				C49D59FF29254ED000B046CF /* RecommendedPotionsSlider.swift in Sources */,
+				C47D6EA52925923500352C84 /* StartupScreenSelection.swift in Sources */,
 				C49283A828C6538E005770A8 /* Optimal_HealthApp.swift in Sources */,
 				C49EA616290A934000A1AF4C /* TappablePortionView.swift in Sources */,
 				C429ECE0291D1157005DBCE4 /* Constants.swift in Sources */,
 				C41B70E32922428500804987 /* NutrientEntryExtensions.swift in Sources */,
+				C47D6EA7292592B500352C84 /* DefaultStartupPicker.swift in Sources */,
+				C47D6EA929259AE700352C84 /* UserDefaultsController.swift in Sources */,
+				C47D6EAF2926183A00352C84 /* HeaderView.swift in Sources */,
+				C47D6EB529261B8900352C84 /* DefaultDateSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,18 +30,22 @@ enum Nutrient: String, CustomStringConvertible, CaseIterable {
   var userDefaultKey: String {
     switch self {
     case .proteins:
-      return Constants.UserDefaultKeys.numberOfTappableProteins
+      return Constants.UserDefaultKeys.recommendedProteins
     case .fats:
-      return Constants.UserDefaultKeys.numberOfTappableFats
+      return Constants.UserDefaultKeys.recommendedFats
     case .carbs:
-      return Constants.UserDefaultKeys.numberOfTappableCarbs
+      return Constants.UserDefaultKeys.recommendedCarbs
     case .vegetables:
-      return Constants.UserDefaultKeys.numberOfTappableVegs
+      return Constants.UserDefaultKeys.recommendedVeg
     }
   }
   
+  var recommendedPortions: Double {
+    UserDefaults.standard.value(forKey: self.userDefaultKey) as? Double ?? 8.0
+  }
+  
   var numberOfVisiblePortions: Int {
-    return UserDefaults.standard.value(forKey: userDefaultKey) as? Int ?? 20
+    return Int(Constants.InitialDefaults.visiblePortions)
   }
   
 }

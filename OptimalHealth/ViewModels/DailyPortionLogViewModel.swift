@@ -25,8 +25,17 @@ class DailyPortionLogViewModel: ObservableObject {
   
   init() {
     
-    if let lastViewedDateInUserDefaults = UserDefaults.standard.value(forKey: Constants.UserDefaultKeys.lastViewLogDate) as? Data, let lastViewedDateComponents = try? decoder.decode(DateComponents.self, from: lastViewedDateInUserDefaults) {
-      currentLogDateComponents = lastViewedDateComponents
+    if let defaultStartupString = UserDefaultsController.getValue(for: Constants.UserDefaultKeys.defaultStartUp, ofType: String.self), let defaultStartupSetting = StartUpScreenSelection.init(rawValue: defaultStartupString) {
+      switch defaultStartupSetting {
+      case .today:
+        currentLogDateComponents = calendar.dateComponents([.year, .month, .day], from: Date())
+      case .lastViewed:
+        if let lastViewedDateInUserDefaults = UserDefaultsController.getValue(for: Constants.UserDefaultKeys.lastViewLogDate, ofType: Data.self), let lastViewedDateComponents = try? decoder.decode(DateComponents.self, from: lastViewedDateInUserDefaults) {
+          currentLogDateComponents = lastViewedDateComponents
+        } else {
+          currentLogDateComponents = calendar.dateComponents([.year, .month, .day], from: Date())
+        }
+      }
     } else {
       currentLogDateComponents = calendar.dateComponents([.year, .month, .day], from: Date())
     }
@@ -77,7 +86,7 @@ extension DailyPortionLogViewModel {
       nutrientEntry.nameData = nutrient.rawValue
       nutrientEntry.id = UUID()
       nutrientEntry.portionsConsumed = 0
-      nutrientEntry.portionsRecommended = 8
+      nutrientEntry.portionsRecommended = UserDefaults.standard.value(forKey: nutrient.userDefaultKey) as? Int32 ?? 8
       newLog.addToNutrientEntries(nutrientEntry)
     }
     try? CoreDataController.shared.context.save()

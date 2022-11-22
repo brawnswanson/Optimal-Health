@@ -29,6 +29,8 @@
 		C47D6EAF2926183A00352C84 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EAE2926183A00352C84 /* HeaderView.swift */; };
 		C47D6EB329261B4800352C84 /* RecommendedPortionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EB229261B4800352C84 /* RecommendedPortionsSection.swift */; };
 		C47D6EB529261B8900352C84 /* DefaultDateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EB429261B8900352C84 /* DefaultDateSection.swift */; };
+		C4876DB3292BD27200A61E09 /* ScrollingCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = C4876DB2292BD27200A61E09 /* ScrollingCalendar */; };
+		C48B6DC6292BE94200FE978E /* ScrollingCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = C48B6DC5292BE94200FE978E /* ScrollingCalendar */; };
 		C49283A828C6538E005770A8 /* Optimal_HealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49283A728C6538E005770A8 /* Optimal_HealthApp.swift */; };
 		C49283AA28C6538E005770A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49283A928C6538E005770A8 /* ContentView.swift */; };
 		C49283AC28C6538F005770A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49283AB28C6538F005770A8 /* Assets.xcassets */; };
@@ -78,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C48B6DC6292BE94200FE978E /* ScrollingCalendar in Frameworks */,
+				C4876DB3292BD27200A61E09 /* ScrollingCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,11 +233,19 @@
 			path = Body;
 			sourceTree = "<group>";
 		};
+		C4876DB1292BD27200A61E09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C492839B28C6538E005770A8 = {
 			isa = PBXGroup;
 			children = (
 				C49283A628C6538E005770A8 /* OptimalHealth */,
 				C49283A528C6538E005770A8 /* Products */,
+				C4876DB1292BD27200A61E09 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -313,6 +325,10 @@
 			dependencies = (
 			);
 			name = "Optimal Health";
+			packageProductDependencies = (
+				C4876DB2292BD27200A61E09 /* ScrollingCalendar */,
+				C48B6DC5292BE94200FE978E /* ScrollingCalendar */,
+			);
 			productName = "Optimal Health";
 			productReference = C49283A428C6538E005770A8 /* Optimal Health.app */;
 			productType = "com.apple.product-type.application";
@@ -341,6 +357,9 @@
 				Base,
 			);
 			mainGroup = C492839B28C6538E005770A8;
+			packageReferences = (
+				C48B6DC4292BE94200FE978E /* XCRemoteSwiftPackageReference "ScrollingCalendar" */,
+			);
 			productRefGroup = C49283A528C6538E005770A8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -529,8 +548,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -558,8 +577,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -595,6 +614,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C48B6DC4292BE94200FE978E /* XCRemoteSwiftPackageReference "ScrollingCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/brawnswanson/ScrollingCalendar.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C4876DB2292BD27200A61E09 /* ScrollingCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScrollingCalendar;
+		};
+		C48B6DC5292BE94200FE978E /* ScrollingCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C48B6DC4292BE94200FE978E /* XCRemoteSwiftPackageReference "ScrollingCalendar" */;
+			productName = ScrollingCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C429ECE5291D2460005DBCE4 /* DailyLogModel.xcdatamodeld */ = {

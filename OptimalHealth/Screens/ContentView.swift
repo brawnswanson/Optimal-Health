@@ -6,15 +6,25 @@
 //
 
 import SwiftUI
+import ScrollingCalendar
 
 struct ContentView: View {
-    var body: some View {
-        DailyPortionLogView()
+  var body: some View {
+    TabView {
+      DailyPortionLogView().tabItem {
+        Label {
+          Text("Daily Log")
+        } icon: {
+          Image(systemName: "book")
+        }
+      }
+      ScrollingCalendar(viewModel: ScrollingCalendarViewModel(dataSource: nil))
     }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }

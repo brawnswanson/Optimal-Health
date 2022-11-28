@@ -9,6 +9,10 @@ import SwiftUI
 import ScrollingCalendar
 
 struct ContentView: View {
+  
+  @FetchRequest(sortDescriptors: []) private var logs: FetchedResults<DailyLog>
+  
+  
   var body: some View {
     TabView {
       DailyPortionLogView().tabItem {
@@ -18,7 +22,14 @@ struct ContentView: View {
           Image(systemName: "book")
         }
       }
-      ScrollingCalendar(viewModel: ScrollingCalendarViewModel(dataSource: nil))
+//      ScrollingCalendar(viewModel: ScrollingCalendarViewModel(dataSource: nil))
+    }
+    .onAppear {
+//      let dataSourceArray: [any ScrollingCalendarAttachment] = []
+//      for log in logs {
+//        
+//      }
+//      
     }
   }
 }

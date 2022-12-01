@@ -29,3 +29,5 @@ public final class CoreDataController {
   
   private init() {}
 }
+
+//TODO: - Need a fetch request for logs that are between certain dates

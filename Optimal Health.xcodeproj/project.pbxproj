@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4160B132935D71F00208300 /* ScrollingCalendarSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4160B122935D71F00208300 /* ScrollingCalendarSheet.swift */; };
 		C41B70E32922428500804987 /* NutrientEntryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B70E22922428500804987 /* NutrientEntryExtensions.swift */; };
 		C41B70E8292260C400804987 /* NutrientsSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B70E7292260C400804987 /* NutrientsSectionViewModel.swift */; };
 		C429ECD8291D0580005DBCE4 /* NutrientSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C429ECD7291D0580005DBCE4 /* NutrientSectionView.swift */; };
@@ -29,8 +30,6 @@
 		C47D6EAF2926183A00352C84 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EAE2926183A00352C84 /* HeaderView.swift */; };
 		C47D6EB329261B4800352C84 /* RecommendedPortionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EB229261B4800352C84 /* RecommendedPortionsSection.swift */; };
 		C47D6EB529261B8900352C84 /* DefaultDateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EB429261B8900352C84 /* DefaultDateSection.swift */; };
-		C4876DB3292BD27200A61E09 /* ScrollingCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = C4876DB2292BD27200A61E09 /* ScrollingCalendar */; };
-		C48B6DC6292BE94200FE978E /* ScrollingCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = C48B6DC5292BE94200FE978E /* ScrollingCalendar */; };
 		C49283A828C6538E005770A8 /* Optimal_HealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49283A728C6538E005770A8 /* Optimal_HealthApp.swift */; };
 		C49283AA28C6538E005770A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49283A928C6538E005770A8 /* ContentView.swift */; };
 		C49283AC28C6538F005770A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49283AB28C6538F005770A8 /* Assets.xcassets */; };
@@ -38,10 +37,12 @@
 		C49D59FF29254ED000B046CF /* RecommendedPotionsSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49D59FE29254ED000B046CF /* RecommendedPotionsSlider.swift */; };
 		C49EA616290A934000A1AF4C /* TappablePortionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49EA615290A934000A1AF4C /* TappablePortionView.swift */; };
 		C49F93042920FFC2007AD4DB /* ValueTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F93032920FFC1007AD4DB /* ValueTransformers.swift */; };
+		C4D15D742934D28C00EA7ED7 /* ScrollingCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = C4D15D732934D28C00EA7ED7 /* ScrollingCalendar */; };
 		C4D4F284291FF4FD00224721 /* DailyLogExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D4F283291FF4FD00224721 /* DailyLogExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C4160B122935D71F00208300 /* ScrollingCalendarSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingCalendarSheet.swift; sourceTree = "<group>"; };
 		C41B70E22922428500804987 /* NutrientEntryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientEntryExtensions.swift; sourceTree = "<group>"; };
 		C41B70E7292260C400804987 /* NutrientsSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsSectionViewModel.swift; sourceTree = "<group>"; };
 		C429ECD7291D0580005DBCE4 /* NutrientSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientSectionView.swift; sourceTree = "<group>"; };
@@ -80,14 +81,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C48B6DC6292BE94200FE978E /* ScrollingCalendar in Frameworks */,
-				C4876DB3292BD27200A61E09 /* ScrollingCalendar in Frameworks */,
+				C4D15D742934D28C00EA7ED7 /* ScrollingCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C4160B112935D70B00208300 /* ScrollingCalendarSheet */ = {
+			isa = PBXGroup;
+			children = (
+				C4160B122935D71F00208300 /* ScrollingCalendarSheet.swift */,
+			);
+			path = ScrollingCalendarSheet;
+			sourceTree = "<group>";
+		};
 		C41B70E42922485400804987 /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				C49283A928C6538E005770A8 /* ContentView.swift */,
+				C4160B112935D70B00208300 /* ScrollingCalendarSheet */,
 				C4677251290AC06B00C9FFC1 /* DailyPortionLogScreen */,
 				C461036F29252948000A3C01 /* SettingsSheet */,
 			);
@@ -326,8 +335,7 @@
 			);
 			name = "Optimal Health";
 			packageProductDependencies = (
-				C4876DB2292BD27200A61E09 /* ScrollingCalendar */,
-				C48B6DC5292BE94200FE978E /* ScrollingCalendar */,
+				C4D15D732934D28C00EA7ED7 /* ScrollingCalendar */,
 			);
 			productName = "Optimal Health";
 			productReference = C49283A428C6538E005770A8 /* Optimal Health.app */;
@@ -358,7 +366,7 @@
 			);
 			mainGroup = C492839B28C6538E005770A8;
 			packageReferences = (
-				C48B6DC4292BE94200FE978E /* XCRemoteSwiftPackageReference "ScrollingCalendar" */,
+				C4D15D722934D28C00EA7ED7 /* XCRemoteSwiftPackageReference "ScrollingCalendar" */,
 			);
 			productRefGroup = C49283A528C6538E005770A8 /* Products */;
 			projectDirPath = "";
@@ -413,6 +421,7 @@
 				C47D6EA7292592B500352C84 /* DefaultStartupPicker.swift in Sources */,
 				C47D6EA929259AE700352C84 /* UserDefaultsController.swift in Sources */,
 				C47D6EAF2926183A00352C84 /* HeaderView.swift in Sources */,
+				C4160B132935D71F00208300 /* ScrollingCalendarSheet.swift in Sources */,
 				C47D6EB529261B8900352C84 /* DefaultDateSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,7 +625,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C48B6DC4292BE94200FE978E /* XCRemoteSwiftPackageReference "ScrollingCalendar" */ = {
+		C4D15D722934D28C00EA7ED7 /* XCRemoteSwiftPackageReference "ScrollingCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/brawnswanson/ScrollingCalendar.git";
 			requirement = {
@@ -627,13 +636,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C4876DB2292BD27200A61E09 /* ScrollingCalendar */ = {
+		C4D15D732934D28C00EA7ED7 /* ScrollingCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = ScrollingCalendar;
-		};
-		C48B6DC5292BE94200FE978E /* ScrollingCalendar */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C48B6DC4292BE94200FE978E /* XCRemoteSwiftPackageReference "ScrollingCalendar" */;
+			package = C4D15D722934D28C00EA7ED7 /* XCRemoteSwiftPackageReference "ScrollingCalendar" */;
 			productName = ScrollingCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */

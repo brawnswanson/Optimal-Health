@@ -7,12 +7,15 @@
 
 import Foundation
 import Combine
+import ScrollingCalendar
 
 class DailyPortionLogViewModel: ObservableObject {
   
   @Published var currentLog: DailyLog?
   @Published var currentLogNutrients: [NutrientEntry] = []
   @Published var currentLogDateComponents: DateComponents
+  @Published var scrollingCalendarDateComponents: DateComponents?
+  
   let updateNutrientConsumedPublisher = PassthroughSubject<(NutrientEntry, Int), Never>()
   
   private let contextChangePublisher = NotificationCenter.default.publisher(for: Notification.Name.NSManagedObjectContextObjectsDidChange)
@@ -44,6 +47,13 @@ class DailyPortionLogViewModel: ObservableObject {
       .map { $0?.nutrientsArray }
       .replaceNil(with: [])
       .assign(to: &$currentLogNutrients)
+    
+    $scrollingCalendarDateComponents
+      .sink {
+        guard let newDateComponents = $0 else { return }
+        self.currentLogDateComponents = newDateComponents
+      }
+      .store(in: &subscriptions)
     
     //Subscribe to publishers
     didUpdateCurrentViewDate()
@@ -118,4 +128,13 @@ extension DailyPortionLogViewModel {
     guard let lastViewedDateInUserDefaults = UserDefaults.standard.value(forKey: Constants.UserDefaultKeys.lastViewLogDate) as? Data, let lastViewedDateComponents = try? decoder.decode(DateComponents.self, from: lastViewedDateInUserDefaults) else { return nil }
     return lastViewedDateComponents
   }
+}
+
+extension DailyPortionLogViewModel: ScrollingCalendarInterface {
+  func getFilledInDaysFor(month: Int, and year: Int) -> [Int] {
+    let thisMonth = DailyLog.existingLogsFetchRequest(for: DateComponents(year: 2022, month: 11))
+  return []
+  }
+  
+  
 }

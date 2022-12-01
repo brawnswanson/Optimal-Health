@@ -12,26 +12,10 @@ struct ContentView: View {
   
   @FetchRequest(sortDescriptors: []) private var logs: FetchedResults<DailyLog>
   
-  
   var body: some View {
-    TabView {
-      DailyPortionLogView().tabItem {
-        Label {
-          Text("Daily Log")
-        } icon: {
-          Image(systemName: "book")
-        }
-      }
-//      ScrollingCalendar(viewModel: ScrollingCalendarViewModel(dataSource: nil))
-    }
-    .onAppear {
-//      let dataSourceArray: [any ScrollingCalendarAttachment] = []
-//      for log in logs {
-//        
-//      }
-//      
-    }
+    DailyPortionLogView()
   }
+  
 }
 
 struct ContentView_Previews: PreviewProvider {

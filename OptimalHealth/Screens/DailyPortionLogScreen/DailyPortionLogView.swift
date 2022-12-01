@@ -14,7 +14,7 @@ struct DailyPortionLogView: View {
   
   var body: some View {
     VStack {
-      PortionLogHeader(currentDateComponents: $vm.currentLogDateComponents)
+      PortionLogHeader().environmentObject(vm)
       Divider()
       Spacer()
       if currentLogViewVisible {

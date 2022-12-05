@@ -23,7 +23,6 @@
 		C47913F3291D659800047E61 /* AvailableNutrients.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47913F2291D659800047E61 /* AvailableNutrients.swift */; };
 		C47D6EA52925923500352C84 /* StartupScreenSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EA42925923500352C84 /* StartupScreenSelection.swift */; };
 		C47D6EA7292592B500352C84 /* DefaultStartupPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EA6292592B500352C84 /* DefaultStartupPicker.swift */; };
-		C47D6EA929259AE700352C84 /* UserDefaultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EA829259AE700352C84 /* UserDefaultsController.swift */; };
 		C47D6EAB29259C8400352C84 /* CreateLogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EAA29259C8400352C84 /* CreateLogButton.swift */; };
 		C47D6EAD2926182900352C84 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EAC2926182900352C84 /* DismissButton.swift */; };
 		C47D6EAF2926183A00352C84 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EAE2926183A00352C84 /* HeaderView.swift */; };
@@ -36,6 +35,7 @@
 		C49D59FF29254ED000B046CF /* RecommendedPotionsSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49D59FE29254ED000B046CF /* RecommendedPotionsSlider.swift */; };
 		C49EA616290A934000A1AF4C /* TappablePortionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49EA615290A934000A1AF4C /* TappablePortionView.swift */; };
 		C49F93042920FFC2007AD4DB /* ValueTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F93032920FFC1007AD4DB /* ValueTransformers.swift */; };
+		C4D15D742934D28C00EA7ED7 /* ScrollingCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = C4D15D732934D28C00EA7ED7 /* ScrollingCalendar */; };
 		C4D4F284291FF4FD00224721 /* DailyLogExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D4F283291FF4FD00224721 /* DailyLogExtensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +56,6 @@
 		C47913F2291D659800047E61 /* AvailableNutrients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableNutrients.swift; sourceTree = "<group>"; };
 		C47D6EA42925923500352C84 /* StartupScreenSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupScreenSelection.swift; sourceTree = "<group>"; };
 		C47D6EA6292592B500352C84 /* DefaultStartupPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStartupPicker.swift; sourceTree = "<group>"; };
-		C47D6EA829259AE700352C84 /* UserDefaultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsController.swift; sourceTree = "<group>"; };
 		C47D6EAA29259C8400352C84 /* CreateLogButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLogButton.swift; sourceTree = "<group>"; };
 		C47D6EAC2926182900352C84 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 		C47D6EAE2926183A00352C84 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4D15D742934D28C00EA7ED7 /* ScrollingCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +124,6 @@
 			children = (
 				C47D6EA32925920800352C84 /* Enums */,
 				C429ECDF291D1157005DBCE4 /* Constants.swift */,
-				C47D6EA829259AE700352C84 /* UserDefaultsController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -135,6 +134,8 @@
 				C429ECE5291D2460005DBCE4 /* DailyLogModel.xcdatamodeld */,
 				C429ECE8291D2649005DBCE4 /* CoreDataController.swift */,
 				C49F93032920FFC1007AD4DB /* ValueTransformers.swift */,
+				C4D4F283291FF4FD00224721 /* DailyLogExtensions.swift */,
+				C41B70E22922428500804987 /* NutrientEntryExtensions.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -229,11 +230,19 @@
 			path = Body;
 			sourceTree = "<group>";
 		};
+		C4876DB1292BD27200A61E09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C492839B28C6538E005770A8 = {
 			isa = PBXGroup;
 			children = (
 				C49283A628C6538E005770A8 /* OptimalHealth */,
 				C49283A528C6538E005770A8 /* Products */,
+				C4876DB1292BD27200A61E09 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,8 +300,6 @@
 		C4D4F280291FF3EA00224721 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C4D4F283291FF4FD00224721 /* DailyLogExtensions.swift */,
-				C41B70E22922428500804987 /* NutrientEntryExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -313,6 +320,9 @@
 			dependencies = (
 			);
 			name = "Optimal Health";
+			packageProductDependencies = (
+				C4D15D732934D28C00EA7ED7 /* ScrollingCalendar */,
+			);
 			productName = "Optimal Health";
 			productReference = C49283A428C6538E005770A8 /* Optimal Health.app */;
 			productType = "com.apple.product-type.application";
@@ -341,6 +351,9 @@
 				Base,
 			);
 			mainGroup = C492839B28C6538E005770A8;
+			packageReferences = (
+				C4D15D722934D28C00EA7ED7 /* XCRemoteSwiftPackageReference "ScrollingCalendar" */,
+			);
 			productRefGroup = C49283A528C6538E005770A8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -392,7 +405,6 @@
 				C429ECE0291D1157005DBCE4 /* Constants.swift in Sources */,
 				C41B70E32922428500804987 /* NutrientEntryExtensions.swift in Sources */,
 				C47D6EA7292592B500352C84 /* DefaultStartupPicker.swift in Sources */,
-				C47D6EA929259AE700352C84 /* UserDefaultsController.swift in Sources */,
 				C47D6EAF2926183A00352C84 /* HeaderView.swift in Sources */,
 				C47D6EB529261B8900352C84 /* DefaultDateSection.swift in Sources */,
 			);
@@ -529,8 +541,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -558,8 +570,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -595,6 +607,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C4D15D722934D28C00EA7ED7 /* XCRemoteSwiftPackageReference "ScrollingCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/brawnswanson/ScrollingCalendar.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C4D15D732934D28C00EA7ED7 /* ScrollingCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4D15D722934D28C00EA7ED7 /* XCRemoteSwiftPackageReference "ScrollingCalendar" */;
+			productName = ScrollingCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C429ECE5291D2460005DBCE4 /* DailyLogModel.xcdatamodeld */ = {

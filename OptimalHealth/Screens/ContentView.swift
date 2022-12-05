@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        DailyPortionLogView()
-    }
+  
+  @FetchRequest(sortDescriptors: []) private var logs: FetchedResults<DailyLog>
+  
+  var body: some View {
+    DailyPortionLogView()
+  }
+  
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }

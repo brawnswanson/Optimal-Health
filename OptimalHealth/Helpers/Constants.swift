@@ -21,7 +21,8 @@ enum Constants {
     public static let coreDataFatalError = "Error loading data"
   }
   enum UserDefaultKeys {
-    public static let lastViewLogDate = "lastViewedLogDate"
+    public static let lastViewedDate = "lastViewedDate"
+    public static let recommendedPortions = "recommendedPortions"
     public static let recommendedProteins = "recommendeProteins"
     public static let recommendedCarbs = "recommendedCarbs"
     public static let recommendedVeg = "recommendedVeg"

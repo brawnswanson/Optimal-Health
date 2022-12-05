@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "scrollingcalendar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/brawnswanson/ScrollingCalendar.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "82644b52cc87581b46d194078d550d5d8737fa7a"
+      }
+    }
+  ],
+  "version" : 2
+}

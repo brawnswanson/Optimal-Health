@@ -7,38 +7,23 @@
 
 import Foundation
 import Combine
+import ScrollingCalendar
 
 class DailyPortionLogViewModel: ObservableObject {
   
   @Published var currentLog: DailyLog?
   @Published var currentLogNutrients: [NutrientEntry] = []
-  @Published var currentLogDateComponents: DateComponents
+  @Published var selectedDate = Date()
+ 
   let updateNutrientConsumedPublisher = PassthroughSubject<(NutrientEntry, Int), Never>()
   
   private let contextChangePublisher = NotificationCenter.default.publisher(for: Notification.Name.NSManagedObjectContextObjectsDidChange)
   
   private let calendar = Calendar.current
-  private let decoder = JSONDecoder()
-  private let encoder = JSONEncoder()
   
   private var subscriptions = Set<AnyCancellable>()
   
   init() {
-    
-    if let defaultStartupString = UserDefaultsController.getValue(for: Constants.UserDefaultKeys.defaultStartUp, ofType: String.self), let defaultStartupSetting = StartUpScreenSelection.init(rawValue: defaultStartupString) {
-      switch defaultStartupSetting {
-      case .today:
-        currentLogDateComponents = calendar.dateComponents([.year, .month, .day], from: Date())
-      case .lastViewed:
-        if let lastViewedDateInUserDefaults = UserDefaultsController.getValue(for: Constants.UserDefaultKeys.lastViewLogDate, ofType: Data.self), let lastViewedDateComponents = try? decoder.decode(DateComponents.self, from: lastViewedDateInUserDefaults) {
-          currentLogDateComponents = lastViewedDateComponents
-        } else {
-          currentLogDateComponents = calendar.dateComponents([.year, .month, .day], from: Date())
-        }
-      }
-    } else {
-      currentLogDateComponents = calendar.dateComponents([.year, .month, .day], from: Date())
-    }
     
     $currentLog
       .map { $0?.nutrientsArray }
@@ -46,7 +31,7 @@ class DailyPortionLogViewModel: ObservableObject {
       .assign(to: &$currentLogNutrients)
     
     //Subscribe to publishers
-    didUpdateCurrentViewDate()
+    didUpdateSelectedDate()
     contextDidChangeRefreshLog()
     updateNutrientConsumedPublisher
       .sink { nutrient, amount in
@@ -58,19 +43,15 @@ class DailyPortionLogViewModel: ObservableObject {
 
 //MARK: - Combine subscribe functions
 extension DailyPortionLogViewModel {
-  func didUpdateCurrentViewDate() {
-    $currentLogDateComponents
-      .map {
-        self.updateLastViewedDate(with: $0)
-        return $0
-      }
+  func didUpdateSelectedDate() {
+    $selectedDate
       .map { try? self.fetchLog(for: $0) }
       .assign(to: &$currentLog)
   }
   
   func contextDidChangeRefreshLog() {
     contextChangePublisher
-      .map { _ in try? self.fetchLog(for: self.currentLogDateComponents)}
+      .map { _ in try? self.fetchLog(for: self.selectedDate)}
       .assign(to: &$currentLog)
   }
 }
@@ -79,7 +60,7 @@ extension DailyPortionLogViewModel {
 extension DailyPortionLogViewModel {
   func createNewLog() {
     let newLog = DailyLog(context: CoreDataController.shared.context)
-    newLog.date = currentLogDateComponents
+    newLog.date = selectedDate
     newLog.id = UUID()
     for nutrient in Nutrient.allCases {
       let nutrientEntry = NutrientEntry(context: CoreDataController.shared.context)
@@ -92,7 +73,7 @@ extension DailyPortionLogViewModel {
     try? CoreDataController.shared.context.save()
   }
   
-  func fetchLog(for date: DateComponents) throws -> DailyLog? {
+  func fetchLog(for date: Date) throws -> DailyLog? {
     let fetchRequest = DailyLog.dailyLogFetchRequest(for: date)
     let results = try CoreDataController.shared.context.fetch(fetchRequest)
     return results.first
@@ -103,19 +84,5 @@ extension DailyPortionLogViewModel {
     let newPortionsConsumed = Int(nutrient.portionsConsumed) + value
     nutrient.portionsConsumed = Int32(newPortionsConsumed)
     try? CoreDataController.shared.context.save()
-  }
-}
-
-//MARK: - UserDefaults interactions
-extension DailyPortionLogViewModel {
-  
-  func updateLastViewedDate(with dateComponents: DateComponents) {
-    let data = try? encoder.encode(dateComponents)
-    UserDefaults.standard.set(data, forKey: Constants.UserDefaultKeys.lastViewLogDate)
-  }
-  
-  func getLastViewedDate() -> DateComponents? {
-    guard let lastViewedDateInUserDefaults = UserDefaults.standard.value(forKey: Constants.UserDefaultKeys.lastViewLogDate) as? Data, let lastViewedDateComponents = try? decoder.decode(DateComponents.self, from: lastViewedDateInUserDefaults) else { return nil }
-    return lastViewedDateComponents
   }
 }

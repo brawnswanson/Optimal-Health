@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import ScrollingCalendar
 
 struct ContentView: View {
   

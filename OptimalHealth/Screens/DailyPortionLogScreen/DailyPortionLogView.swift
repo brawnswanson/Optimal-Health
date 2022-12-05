@@ -11,10 +11,11 @@ struct DailyPortionLogView: View {
   
   @StateObject private var vm = DailyPortionLogViewModel()
   @State var currentLogViewVisible: Bool = false
+  @State var isSettingsSheetDisplayed = false
   
   var body: some View {
     VStack {
-      PortionLogHeader().environmentObject(vm)
+      PortionLogHeader(isSettingsSheetDisplayed: $isSettingsSheetDisplayed, currentDate: $vm.selectedDate)
       Divider()
       Spacer()
       if currentLogViewVisible {

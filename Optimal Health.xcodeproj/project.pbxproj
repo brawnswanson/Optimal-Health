@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C4160B132935D71F00208300 /* ScrollingCalendarSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4160B122935D71F00208300 /* ScrollingCalendarSheet.swift */; };
 		C41B70E32922428500804987 /* NutrientEntryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B70E22922428500804987 /* NutrientEntryExtensions.swift */; };
 		C41B70E8292260C400804987 /* NutrientsSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41B70E7292260C400804987 /* NutrientsSectionViewModel.swift */; };
 		C429ECD8291D0580005DBCE4 /* NutrientSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C429ECD7291D0580005DBCE4 /* NutrientSectionView.swift */; };
@@ -42,7 +41,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C4160B122935D71F00208300 /* ScrollingCalendarSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingCalendarSheet.swift; sourceTree = "<group>"; };
 		C41B70E22922428500804987 /* NutrientEntryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientEntryExtensions.swift; sourceTree = "<group>"; };
 		C41B70E7292260C400804987 /* NutrientsSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsSectionViewModel.swift; sourceTree = "<group>"; };
 		C429ECD7291D0580005DBCE4 /* NutrientSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientSectionView.swift; sourceTree = "<group>"; };
@@ -88,14 +86,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C4160B112935D70B00208300 /* ScrollingCalendarSheet */ = {
-			isa = PBXGroup;
-			children = (
-				C4160B122935D71F00208300 /* ScrollingCalendarSheet.swift */,
-			);
-			path = ScrollingCalendarSheet;
-			sourceTree = "<group>";
-		};
 		C41B70E42922485400804987 /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,7 +292,6 @@
 			isa = PBXGroup;
 			children = (
 				C49283A928C6538E005770A8 /* ContentView.swift */,
-				C4160B112935D70B00208300 /* ScrollingCalendarSheet */,
 				C4677251290AC06B00C9FFC1 /* DailyPortionLogScreen */,
 				C461036F29252948000A3C01 /* SettingsSheet */,
 			);
@@ -421,7 +410,6 @@
 				C47D6EA7292592B500352C84 /* DefaultStartupPicker.swift in Sources */,
 				C47D6EA929259AE700352C84 /* UserDefaultsController.swift in Sources */,
 				C47D6EAF2926183A00352C84 /* HeaderView.swift in Sources */,
-				C4160B132935D71F00208300 /* ScrollingCalendarSheet.swift in Sources */,
 				C47D6EB529261B8900352C84 /* DefaultDateSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

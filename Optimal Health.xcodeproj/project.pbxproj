@@ -263,7 +263,6 @@
 				C49EA614290A932A00A1AF4C /* Screens */,
 				C429ECDB291D094A005DBCE4 /* CommonComponents */,
 				C429ECDE291D113B005DBCE4 /* Helpers */,
-				C4D4F280291FF3EA00224721 /* Extensions */,
 				C49283AB28C6538F005770A8 /* Assets.xcassets */,
 				C49283AD28C6538F005770A8 /* Preview Content */,
 			);
@@ -295,13 +294,6 @@
 				C461036F29252948000A3C01 /* SettingsSheet */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		C4D4F280291FF3EA00224721 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

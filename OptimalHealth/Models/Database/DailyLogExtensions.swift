@@ -11,8 +11,10 @@ import CoreData
 extension DailyLog {
   
   static func dailyLogFetchRequest(for date: Date) -> NSFetchRequest<DailyLog> {
+    let startOfDate = Calendar.current.startOfDay(for: date)
+    let endOfDate = Calendar.current.startOfDay(for: Calendar.current.date(byAdding: .day, value: 1, to: date)!)
     let request = DailyLog.fetchRequest()
-   
+    request.predicate = NSPredicate(format: "date>=%@ && date<%@", startOfDate as CVarArg, endOfDate as CVarArg)
     return request
   }
   

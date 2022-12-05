@@ -10,45 +10,37 @@ import SwiftUI
 struct DailyPortionLogView: View {
   
   @StateObject private var vm = DailyPortionLogViewModel()
-  
-  @State var selectedDate = Date()
-  @State var currentLogViewVisible: Bool = false
   @State var isSettingsSheetDisplayed = false
-  @AppStorage(Constants.UserDefaultKeys.lastViewedDate, store: .standard) var lastViewedDateInterval = Date().timeIntervalSince1970
+  
+  @AppStorage(Constants.UserDefaultKeys.lastViewedDate) var lastViewedDateInterval = Date().timeIntervalSince1970
   @AppStorage(Constants.UserDefaultKeys.defaultStartUp) var startUpPreference = StartUpScreenSelection.today.rawValue
   
   var body: some View {
     VStack {
-      PortionLogHeader(isSettingsSheetDisplayed: $isSettingsSheetDisplayed, currentDate: $selectedDate)
+      PortionLogHeader(isSettingsSheetDisplayed: $isSettingsSheetDisplayed, currentDate: $vm.selectedDate)
         .sheet(isPresented: $isSettingsSheetDisplayed) {
           SettingsSheet()
         }
       Divider()
       Spacer()
-      if currentLogViewVisible {
+      if vm.currentLog != nil {
         NutrientsView(nutrients: $vm.currentLogNutrients)
       } else {
-        CreateLogButton(vm: vm)
+        CreateLogButton(action: vm.createNewLog)
       }
       Spacer()
     }
-    .onChange(of: selectedDate) { date in
+    .onChange(of: vm.selectedDate) { date in
+      print(date.timeIntervalSince1970)
       lastViewedDateInterval = date.timeIntervalSince1970
     }
-    //    .onReceive(vm.$currentLog, perform: { log in
-    //      guard let _ = log else {
-    //        currentLogViewVisible = false
-    //        return
-    //      }
-    //      currentLogViewVisible = true
-    //    })
     .onAppear {
       guard let startUpPreference = StartUpScreenSelection(rawValue: startUpPreference) else { return }
       switch startUpPreference {
       case .today:
-        selectedDate = Date()
+        vm.selectedDate = Date()
       case .lastViewed:
-        selectedDate = Date(timeIntervalSince1970: lastViewedDateInterval)
+        vm.selectedDate = Date(timeIntervalSince1970: lastViewedDateInterval)
       }
     }
   }

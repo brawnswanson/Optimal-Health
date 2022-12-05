@@ -9,11 +9,11 @@ import SwiftUI
 
 struct CreateLogButton: View {
   
-  @ObservedObject var vm: DailyPortionLogViewModel
+  let action: () -> ()
   
   var body: some View {
     Button {
-      vm.createNewLog()
+      action()
     } label: {
       VStack {
         Constants.Images.plus
@@ -24,10 +24,12 @@ struct CreateLogButton: View {
       }
     }
   }
+  
+  
 }
 
 struct CreateLogButton_Previews: PreviewProvider {
   static var previews: some View {
-    CreateLogButton(vm: DailyPortionLogViewModel())
+    CreateLogButton(action: {})
   }
 }

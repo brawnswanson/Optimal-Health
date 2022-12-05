@@ -11,6 +11,7 @@ struct DailyPortionLogView: View {
   
   @StateObject private var vm = DailyPortionLogViewModel()
   @State var isSettingsSheetDisplayed = false
+  @Environment(\.scenePhase) var scenePhase
   
   @AppStorage(Constants.UserDefaultKeys.lastViewedDate) var lastViewedDateInterval = Date().timeIntervalSince1970
   @AppStorage(Constants.UserDefaultKeys.defaultStartUp) var startUpPreference = StartUpScreenSelection.today.rawValue
@@ -30,18 +31,29 @@ struct DailyPortionLogView: View {
       }
       Spacer()
     }
+    .onChange(of: scenePhase) { phase in
+      if phase == .active {
+        setToDefaultStartup()
+      }
+    }
     .onChange(of: vm.selectedDate) { date in
-      print(date.timeIntervalSince1970)
       lastViewedDateInterval = date.timeIntervalSince1970
     }
     .onAppear {
-      guard let startUpPreference = StartUpScreenSelection(rawValue: startUpPreference) else { return }
-      switch startUpPreference {
-      case .today:
-        vm.selectedDate = Date()
-      case .lastViewed:
-        vm.selectedDate = Date(timeIntervalSince1970: lastViewedDateInterval)
-      }
+      setToDefaultStartup()
+    }
+  }
+}
+
+extension DailyPortionLogView {
+  
+  func setToDefaultStartup() {
+    guard let startUpPreference = StartUpScreenSelection(rawValue: startUpPreference) else { return }
+    switch startUpPreference {
+    case .today:
+      vm.selectedDate = Date()
+    case .lastViewed:
+      vm.selectedDate = Date(timeIntervalSince1970: lastViewedDateInterval)
     }
   }
 }

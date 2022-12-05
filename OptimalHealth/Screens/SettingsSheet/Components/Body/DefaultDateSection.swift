@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct DefaultDateSection: View {
-    var body: some View {
-      Section {
-        DefaultStartupPicker()
-      } header: {
-        Text(Constants.Text.defaultDateSettingLabel)
-      }
+  
+  var body: some View {
+    Section {
+      DefaultStartupPicker()
+    } header: {
+      Text(Constants.Text.defaultDateSettingLabel)
     }
+  }
 }
 
 struct DefaultDateSection_Previews: PreviewProvider {
-    static var previews: some View {
-        DefaultDateSection()
-    }
+  static var previews: some View {
+    DefaultDateSection()
+  }
 }

@@ -14,7 +14,7 @@ class DailyPortionLogViewModel: ObservableObject {
   @Published var currentLog: DailyLog?
   @Published var currentLogNutrients: [NutrientEntry] = []
   @Published var selectedDate = Date()
-  
+ 
   let updateNutrientConsumedPublisher = PassthroughSubject<(NutrientEntry, Int), Never>()
   
   private let contextChangePublisher = NotificationCenter.default.publisher(for: Notification.Name.NSManagedObjectContextObjectsDidChange)
@@ -55,7 +55,7 @@ extension DailyPortionLogViewModel {
   
   func contextDidChangeRefreshLog() {
     contextChangePublisher
-      .map { _ in try? self.fetchLog(for: self.currentLogDateComponents)}
+      .map { _ in try? self.fetchLog(for: self.selectedDate)}
       .assign(to: &$currentLog)
   }
 }
@@ -64,7 +64,7 @@ extension DailyPortionLogViewModel {
 extension DailyPortionLogViewModel {
   func createNewLog() {
     let newLog = DailyLog(context: CoreDataController.shared.context)
-    newLog.date = currentLogDateComponents
+//    newLog.date = selectedDate
     newLog.id = UUID()
     for nutrient in Nutrient.allCases {
       let nutrientEntry = NutrientEntry(context: CoreDataController.shared.context)
@@ -99,8 +99,9 @@ extension DailyPortionLogViewModel {
   }
   
   func getLastViewedDate() -> DateComponents? {
-    guard let lastViewedDateInUserDefaults = UserDefaults.standard.value(forKey: Constants.UserDefaultKeys.lastViewLogDate) as? Data, let lastViewedDateComponents = try? decoder.decode(DateComponents.self, from: lastViewedDateInUserDefaults) else { return nil }
-    return lastViewedDateComponents
+//    guard let lastViewedDateInUserDefaults = UserDefaults.standard.value(forKey: Constants.UserDefaultKeys.lastViewLogDate) as? Data, let lastViewedDateComponents = try? decoder.decode(DateComponents.self, from: lastViewedDateInUserDefaults) else { return nil }
+//    return lastViewedDateComponents
+    return nil
   }
 }
 

@@ -9,32 +9,21 @@ import SwiftUI
 
 struct DefaultStartupPicker: View {
   
-  @State var defaultDatePickerSelection: StartUpScreenSelection
+  @AppStorage(Constants.UserDefaultKeys.defaultStartUp) var defaultStartup = StartUpScreenSelection.today.rawValue
   
-    var body: some View {
-      HStack {
-        Picker(selection: $defaultDatePickerSelection, label: Text(Constants.Text.defaultDateSettingLabel)) {
-          Text(StartUpScreenSelection.today.label).tag(StartUpScreenSelection.today)
-          Text(StartUpScreenSelection.lastViewed.label).tag(StartUpScreenSelection.lastViewed)
-        }
-        .pickerStyle(.segmented)
+  var body: some View {
+    HStack {
+      Picker(selection: $defaultStartup, label: Text(Constants.Text.defaultDateSettingLabel)) {
+        Text(StartUpScreenSelection.today.label).tag(StartUpScreenSelection.today.rawValue)
+        Text(StartUpScreenSelection.lastViewed.label).tag(StartUpScreenSelection.lastViewed.rawValue)
       }
-      .onChange(of: defaultDatePickerSelection) { value in
-        UserDefaults.standard.set(value.rawValue, forKey: Constants.UserDefaultKeys.defaultStartUp)
-      }
-    }
-  
-  init() {
-    if let currentSelectionString = UserDefaults.standard.value(forKey: Constants.UserDefaultKeys.defaultStartUp) as? String, let currentSelection = StartUpScreenSelection.init(rawValue: currentSelectionString) {
-      defaultDatePickerSelection = currentSelection
-    } else {
-      defaultDatePickerSelection = .today
+      .pickerStyle(.segmented)
     }
   }
 }
 
 struct DefaultStartupPicker_Previews: PreviewProvider {
-    static var previews: some View {
-        DefaultStartupPicker()
-    }
+  static var previews: some View {
+    DefaultStartupPicker()
+  }
 }

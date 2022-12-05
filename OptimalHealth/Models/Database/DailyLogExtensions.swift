@@ -10,9 +10,9 @@ import CoreData
 
 extension DailyLog {
   
-  static func dailyLogFetchRequest(for date: DateComponents) -> NSFetchRequest<DailyLog> {
+  static func dailyLogFetchRequest(for date: Date) -> NSFetchRequest<DailyLog> {
     let request = DailyLog.fetchRequest()
-    request.predicate = NSPredicate(format: "date==%@", date as CVarArg)
+   
     return request
   }
   

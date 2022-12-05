@@ -23,7 +23,6 @@
 		C47913F3291D659800047E61 /* AvailableNutrients.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47913F2291D659800047E61 /* AvailableNutrients.swift */; };
 		C47D6EA52925923500352C84 /* StartupScreenSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EA42925923500352C84 /* StartupScreenSelection.swift */; };
 		C47D6EA7292592B500352C84 /* DefaultStartupPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EA6292592B500352C84 /* DefaultStartupPicker.swift */; };
-		C47D6EA929259AE700352C84 /* UserDefaultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EA829259AE700352C84 /* UserDefaultsController.swift */; };
 		C47D6EAB29259C8400352C84 /* CreateLogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EAA29259C8400352C84 /* CreateLogButton.swift */; };
 		C47D6EAD2926182900352C84 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EAC2926182900352C84 /* DismissButton.swift */; };
 		C47D6EAF2926183A00352C84 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D6EAE2926183A00352C84 /* HeaderView.swift */; };
@@ -57,7 +56,6 @@
 		C47913F2291D659800047E61 /* AvailableNutrients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableNutrients.swift; sourceTree = "<group>"; };
 		C47D6EA42925923500352C84 /* StartupScreenSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupScreenSelection.swift; sourceTree = "<group>"; };
 		C47D6EA6292592B500352C84 /* DefaultStartupPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStartupPicker.swift; sourceTree = "<group>"; };
-		C47D6EA829259AE700352C84 /* UserDefaultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsController.swift; sourceTree = "<group>"; };
 		C47D6EAA29259C8400352C84 /* CreateLogButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLogButton.swift; sourceTree = "<group>"; };
 		C47D6EAC2926182900352C84 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 		C47D6EAE2926183A00352C84 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 			children = (
 				C47D6EA32925920800352C84 /* Enums */,
 				C429ECDF291D1157005DBCE4 /* Constants.swift */,
-				C47D6EA829259AE700352C84 /* UserDefaultsController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -137,6 +134,8 @@
 				C429ECE5291D2460005DBCE4 /* DailyLogModel.xcdatamodeld */,
 				C429ECE8291D2649005DBCE4 /* CoreDataController.swift */,
 				C49F93032920FFC1007AD4DB /* ValueTransformers.swift */,
+				C4D4F283291FF4FD00224721 /* DailyLogExtensions.swift */,
+				C41B70E22922428500804987 /* NutrientEntryExtensions.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -301,8 +300,6 @@
 		C4D4F280291FF3EA00224721 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C4D4F283291FF4FD00224721 /* DailyLogExtensions.swift */,
-				C41B70E22922428500804987 /* NutrientEntryExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -408,7 +405,6 @@
 				C429ECE0291D1157005DBCE4 /* Constants.swift in Sources */,
 				C41B70E32922428500804987 /* NutrientEntryExtensions.swift in Sources */,
 				C47D6EA7292592B500352C84 /* DefaultStartupPicker.swift in Sources */,
-				C47D6EA929259AE700352C84 /* UserDefaultsController.swift in Sources */,
 				C47D6EAF2926183A00352C84 /* HeaderView.swift in Sources */,
 				C47D6EB529261B8900352C84 /* DefaultDateSection.swift in Sources */,
 			);
